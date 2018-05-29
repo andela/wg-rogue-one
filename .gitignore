@@ -8,9 +8,9 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-build/
+# build/
 develop-eggs/
-dist/
+# dist/
 downloads/
 eggs/
 lib/
@@ -60,7 +60,7 @@ target/
 .idea/
 
 # External Libraries 
-wger/core/static/bower_components
+# wger/core/static/bower_components
 node_modules
 *.DS_Store
 .vscode/

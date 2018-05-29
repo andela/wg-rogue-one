@@ -17,6 +17,9 @@
 import re
 import sys
 
+
+import dj_database_url
+
 '''
 This file contains the global settings that don't usually need to be changed.
 For a full list of options, visit:
@@ -91,12 +94,12 @@ INSTALLED_APPS = (
 # added list of external libraries to be installed by bower
 BOWER_INSTALLED_APPS = (
     'jquery#2.1.x',
-    'bootstrap',
+    'bootstrap#3',
     'd3',
-    'shariff',
+    'shariff#1.24.1',
     'tinymce-dist',
     'DataTables',
-    'components-font-awesome',
+    'components-font-awesome#4.7.0',
     'tinymce',
     'metrics-graphics',
     'devbridge-autocomplete#1.2.x',
@@ -370,3 +373,14 @@ WGER_SETTINGS = {
     'EMAIL_FROM': 'wger Workout Manager <wger@example.com>',
     'TWITTER': False
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {'default': dj_database_url.config()}
