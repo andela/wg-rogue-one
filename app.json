@@ -1,0 +1,41 @@
+{
+  "name": "wg-rogue-one",
+  "scripts": {
+  },
+  "env": {
+    "DISABLE_COLLECTSTATIC": {
+      "required": true
+    },
+    "WG_HOST": {
+      "required": true
+    },
+    "WG_KEY": {
+      "required": true
+    },
+    "WG_NAME": {
+      "required": true
+    },
+    "WG_PASSWORD": {
+      "required": true
+    },
+    "WG_USER": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
