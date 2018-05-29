@@ -1,3 +1,11 @@
+.. image:: https://travis-ci.org/andela/wg-rogue-one.svg?branch=develop
+    :target: https://travis-ci.org/andela/wg-rogue-one
+.. image:: https://coveralls.io/repos/github/andela/wg-rogue-one/badge.svg?branch=develop
+    :target: https://coveralls.io/github/andela/wg-rogue-one?branch=develop
+.. image:: https://api.codeclimate.com/v1/badges/66e1a6626578579a2abc/maintainability
+    :target: https://codeclimate.com/github/andela/wg-rogue-one/maintainability
+    :alt: Maintainability
+
 Thank you for downloading wger Workout Manager. wger (ˈvɛɡɐ) is a free, open source web
 application that manages your exercises and personal workouts, weight and diet
 plans. It can also be used as a simple gym management utility, providing different
@@ -63,14 +71,17 @@ Then install the python packages from pypi in the virtualenv::
 
 ::
 
- $ git clone https://github.com/wger-project/wger.git
- $ cd wger
+ $ git clone https://github.com/andela/wg-rogue-one.git
+ $ cd wg-rogue-one
  $ pip install -r requirements.txt  # or requirements_devel.txt to develop
- $ invoke create_settings \
-          --settings-path /home/wger/wger/settings.py \
-          --database-path /home/wger/wger/database.sqlite
- $ invoke bootstrap_wger \
-          --settings-path /home/wger/wger/settings.py \
+ $ npm install
+
+NOTE: use absolute paths, inorder to get the path to current directory run pwd in the terminal
+
+::
+
+ $ invoke bootstrap-wger \
+          --settings-path /path/to/wg-rogue-one/settings.py \
           --no-start-server
  $ python manage.py runserver
 
@@ -130,7 +141,7 @@ Stable version (from PyPI)
 
 ::
 
- $ wger bootstrap_wger
+ $ wger bootstrap-wger
 
 
 3) Log in as: **admin**, password **admin**
@@ -144,13 +155,13 @@ The available options for the ``wger`` command (if installed from PyPI) or
 <command>``::
 
 
-  bootstrap_wger          Performs all steps necessary to bootstrap the application
-  config_location         Returns the default location for the settings file and the data folder
-  create_or_reset_admin   Creates an admin user or resets the password for an existing one
-  create_settings         Creates a local settings file
-  load_fixtures           Loads all fixtures
-  migrate_db              Run all database migrations
-  start_wger              Start the application using django's built in webserver
+  bootstrap-wger          Performs all steps necessary to bootstrap the application
+  config-location         Returns the default location for the settings file and the data folder
+  create-or-reset-admin   Creates an admin user or resets the password for an existing one
+  create-settings         Creates a local settings file
+  load-fixtures           Loads all fixtures
+  migrate-db              Run all database migrations
+  start-wger              Start the application using django's built in webserver
 
 Contact
 =======
