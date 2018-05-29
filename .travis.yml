@@ -50,9 +50,6 @@ before_script:
   - psql -c 'DROP DATABASE IF EXISTS test_wger;' -U postgres
   - psql -c 'CREATE DATABASE test_wger;' -U postgres
 
-#slack notifications
-travis encrypt "andela:ULPqfRnWEWmLpQThku9rgqLu" --add notifications.slack
-
 # Do the tests
 script:
   # Regular application
@@ -65,4 +62,3 @@ script:
 #slack notifications
 notifications:
   slack: andela:ULPqfRnWEWmLpQThku9rgqLu
-
