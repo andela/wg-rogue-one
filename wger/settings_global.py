@@ -91,12 +91,12 @@ INSTALLED_APPS = (
 # added list of external libraries to be installed by bower
 BOWER_INSTALLED_APPS = (
     'jquery#2.1.x',
-    'bootstrap',
+    'bootstrap#3',
     'd3',
     'shariff',
     'tinymce-dist',
     'DataTables',
-    'components-font-awesome',
+    'components-font-awesome#4.7.0',
     'tinymce',
     'metrics-graphics',
     'devbridge-autocomplete#1.2.x',
@@ -370,3 +370,15 @@ WGER_SETTINGS = {
     'EMAIL_FROM': 'wger Workout Manager <wger@example.com>',
     'TWITTER': False
 }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('WG_NAME'),
+        'USER': os.environ.get('WG_USER'),
+        'HOST': os.environ.get('WG_HOST'),
+        'PASSWORD': os.environ.get('WG_PASSWORD'),
+    }
+}
+
+SECRET_KEY = os.environ.get('WG_KEY')
