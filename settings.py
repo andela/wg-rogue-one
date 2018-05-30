@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('WG_NAME') or "'test_wger'",
+        'NAME': os.environ.get('WG_NAME') or "test_wger",
         'USER': os.environ.get('WG_USER') or 'postgres',
         'HOST': os.environ.get('WG_HOST') or 'localhost',
         'PASSWORD': os.environ.get('WG_PASSWORD') or '',
@@ -25,7 +25,7 @@ DATABASES = {
 }
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'rh(nd%tb*7zl-*j&6h812littid0w47npbtwm1nmed6kp$wir6'
+SECRET_KEY = 'h*e8yqx#(k3a3nbxnde%7d3fo&@=tz6zv)-blgmtoxch5q0=n&'
 
 # Your reCaptcha keys
 RECAPTCHA_PUBLIC_KEY = ''
