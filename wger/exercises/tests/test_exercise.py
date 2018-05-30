@@ -18,6 +18,8 @@ from django.core import mail
 from django.core.cache import cache
 from django.core.urlresolvers import reverse
 
+from rest_framework.test import APIClient
+
 from wger.core.tests.base_testcase import (
     STATUS_CODES_FAIL,
     WorkoutManagerTestCase,
@@ -512,22 +514,41 @@ class WorkoutCacheTestCase(WorkoutManagerTestCase):
             self.assertFalse(cache.get(cache_mapper.get_workout_canonical(workout_id)))
 
 
-# TODO: fix test, all registered users can upload exercises
-# class ExerciseApiTestCase(api_base_test.ApiBaseResourceTestCase):
-#     '''
-#     Tests the exercise overview resource
-#     '''
-#     pk = 1
-#     resource = Exercise
-#     private_resource = False
-#     data = {"category": "1",
-#             "comments": [],
-#             "creation_date": "2013-01-01",
-#             "description": "Something here",
-#             "id": 1,
-#             "language": "2",
-#             "muscles": [
-#                 "1"
-#             ],
-#             "name": "foobar",
-#             "status": "5"}
+class ExerciseApiTest(WorkoutManagerTestCase):
+    def test_exercise_read_only_endpoint(self):
+        '''
+        Test that the exercise read_only end point works
+        '''
+        client = APIClient()
+        response = client.get('/api/v2/exercises/')
+        self.assertEqual(response.status_code, 200)
+        
+    def test_exercise_read_only(self):
+        '''
+        Test that the post methods is not allowed
+        '''
+        data = {
+            "id": 1,
+            "license_author": "subkayine",
+            "status": "2",
+            "description": "<p>Lorem ipsum</p>",
+            "name": "Military",
+            "name_original": "",
+            "creation_date": "",
+            "uuid": "b83e3d85-a53d-4939-a61c-7baa2e94d358",
+            "license": 1,
+            "category": 2,
+            "language": 2,
+            "muscles": [
+                2,
+                2
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                3
+            ]
+        }
+        client = APIClient()
+        response = client.post('/api/v2/exercises/', data=data)
+        # Test for method not allowed
+        self.assertEqual(response.status_code, 405)

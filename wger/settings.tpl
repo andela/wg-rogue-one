@@ -12,6 +12,13 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
+#DB SETTINGS
+dbengine =   os.environ.get("WGER_DB_ENGINE") or 'postgresql'
+dbname = os.environ.get("WGER_DB_NAME") or 'wger'
+dbuser = os.environ.get("WGER_DB_NAME") or 'postgres'
+dbpassword = os.environ.get("WGER_DB_PASSWORD") or 'admin'
+dbhost = os.environ.get("WGER_DB_HOST") or 'localhost'
+dbport = os.environ.get("WGER_DB_PORT") or '5432'
 
 DATABASES = {{
     'default': {{
