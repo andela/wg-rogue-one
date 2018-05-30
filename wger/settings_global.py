@@ -370,3 +370,15 @@ WGER_SETTINGS = {
     'EMAIL_FROM': 'wger Workout Manager <wger@example.com>',
     'TWITTER': False
 }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('WG_NAME'),
+        'USER': os.environ.get('WG_USER'),
+        'HOST': os.environ.get('WG_HOST'),
+        'PASSWORD': os.environ.get('WG_PASSWORD'),
+    }
+}
+
+SECRET_KEY = os.environ.get('WG_KEY')
