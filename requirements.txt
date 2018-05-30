@@ -1,3 +1,4 @@
+
 #
 # Requirements for wger for production
 #
@@ -33,3 +34,6 @@ django-cors-headers
 
 # Python3 compatibility
 six
+autopep8
+flake8
+psycopg2-binary

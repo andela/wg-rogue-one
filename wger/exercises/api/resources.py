@@ -82,7 +82,8 @@ class ExerciseCategoryResource(ModelResource):
 
 
 class ExerciseImageResource(ModelResource):
-    exercise = fields.ToOneField('wger.exercises.api.resources.ExerciseResource', 'exercise')
+    exercise = fields.ToOneField(
+        'wger.exercises.api.resources.ExerciseResource', 'exercise')
     license = fields.ToOneField(LicenseResource, 'license')
 
     class Meta:
@@ -108,7 +109,8 @@ class ExerciseImageResource(ModelResource):
 
 
 class ExerciseCommentResource(ModelResource):
-    exercise = fields.ToOneField('wger.exercises.api.resources.ExerciseResource', 'exercise')
+    exercise = fields.ToOneField(
+        'wger.exercises.api.resources.ExerciseResource', 'exercise')
 
     class Meta:
         queryset = ExerciseComment.objects.all()
