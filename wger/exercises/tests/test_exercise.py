@@ -1,3 +1,4 @@
+
 # This file is part of wger Workout Manager.
 #
 # wger Workout Manager is free software: you can redistribute it and/or modify
@@ -552,3 +553,4 @@ class ExerciseApiTest(WorkoutManagerTestCase):
         response = client.post('/api/v2/exercises/', data=data)
         # Test for method not allowed
         self.assertEqual(response.status_code, 405)
+        

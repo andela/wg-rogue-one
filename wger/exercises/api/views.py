@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 # This file is part of wger Workout Manager.
@@ -90,7 +91,6 @@ class ExercisesViewSet(viewsets.ReadOnlyModelViewSet):
 def search(request):
     '''
     Searches for exercises.
-
     This format is currently used by the exercise search autocompleter
     '''
     q = request.GET.get('term', None)
@@ -216,3 +216,4 @@ class MuscleViewSet(viewsets.ReadOnlyModelViewSet):
     ordering_fields = '__all__'
     filter_fields = ('name',
                      'is_front')
+                     
