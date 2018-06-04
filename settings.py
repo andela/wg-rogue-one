@@ -16,11 +16,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('WG_NAME') or "test_wger",
+        'NAME': os.environ.get('WG_NAME') or 'test_wger',
         'USER': os.environ.get('WG_USER') or 'postgres',
         'HOST': os.environ.get('WG_HOST') or 'localhost',
         'PASSWORD': os.environ.get('WG_PASSWORD') or '',
-        'PORT': os.environ.get('WG_PORT') or '',
+        'PORT': os.environ.get('WG_PORT') or '5432',
     }
 }
 
@@ -46,7 +46,7 @@ MEDIA_URL = '/media/'
 ALLOWED_HOSTS = '*'
 
 # This might be a good idea if you setup memcached
-# SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+#SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 # Configure a real backend in production
 if DEBUG:
@@ -56,4 +56,10 @@ if DEBUG:
 WGER_SETTINGS['EMAIL_FROM'] = 'wger Workout Manager <wger@example.com>'
 
 # Your twitter handle, if you have one for this instance.
-# WGER_SETTINGS['TWITTER'] = ''
+#WGER_SETTINGS['TWITTER'] = ''
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+    
