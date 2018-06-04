@@ -16,7 +16,7 @@ from django.contrib.auth.models import User, AnonymousUser
 from django.http import Http404
 
 from wger.core.tests.base_testcase import WorkoutManagerTestCase
-from wger.utils.helpers import check_access
+from wger.utils.helpers import check_access, compare_access
 
 
 class CheckAccessTestCase(WorkoutManagerTestCase):
@@ -53,3 +53,20 @@ class CheckAccessTestCase(WorkoutManagerTestCase):
         self.assertEqual(check_access(user_no_share, 'test'), (True, user_no_share))
         self.assertEqual(check_access(user_no_share), (True, user_no_share))
         self.assertRaises(Http404, check_access, user_no_share, 'not_a_username')
+
+class CompareAccessTestCase(WorkoutManagerTestCase):
+    '''
+    Test the "compare_access" helper function
+    '''
+
+    def test_helper(self):
+        '''
+        Test the helper function
+        '''
+
+        user_share = User.objects.get(pk=1)
+        test_user = User.objects.filter(username='test')[0]
+
+        anon = AnonymousUser()
+
+        self.assertEqual(compare_access(user_share.username, 1 , 'test'), test_user)
