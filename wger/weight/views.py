@@ -40,7 +40,7 @@ from formtools.preview import FormPreview
 from wger.weight.forms import WeightForm
 from wger.weight.models import WeightEntry
 from wger.weight import helpers
-from wger.utils.helpers import check_access
+from wger.utils.helpers import check_access, compare_access
 from wger.utils.generic_views import WgerFormMixin
 
 
@@ -166,7 +166,6 @@ def get_weight_data(request, username=None):
     '''
     Process the data to pass it to the JS libraries to generate an SVG image
     '''
-
     is_owner, user = check_access(request.user, username)
 
     date_min = request.GET.get('date_min', False)
@@ -186,6 +185,36 @@ def get_weight_data(request, username=None):
 
     # Return the results to the client
     return Response(chart_data)
+
+@api_view(['GET'])
+def compare_weight_data(request, gym=None, username1=None, username2=None):
+    '''
+    Process the data to pass it to the JS libraries to generate an SVG image
+    '''
+    users = [username1, username2]
+    user_data = {}
+    for x in users:
+        user = compare_access(request.user, gym, x)
+
+        date_min = request.GET.get('date_min', False)
+        date_max = request.GET.get('date_max', True)
+
+        if date_min and date_max:
+            weights = WeightEntry.objects.filter(user=user,
+                                                date__range=(date_min, date_max))
+        else:
+            weights = WeightEntry.objects.filter(user=user)
+
+        chart_data = []
+
+        for i in weights:
+            chart_data.append({'date': i.date,
+                            'weight': i.weight})
+        user_data[x] = chart_data
+
+    # Return the results to the client
+    return Response(user_data)
+
 
 
 class WeightCsvImportFormPreview(FormPreview):
