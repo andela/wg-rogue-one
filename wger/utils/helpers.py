@@ -30,6 +30,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.shortcuts import get_object_or_404
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from wger.gym.models import Gym, GymAdminConfig, GymUserConfig
 
 logger = logging.getLogger(__name__)
 
@@ -191,6 +192,30 @@ def check_access(request_user, username=None):
     is_owner = request_user == user
     return is_owner, user
 
+def compare_access(request_user, gymId=None, username=None):
+    '''
+    Small helper function to check that the current (possibly unauthenticated)
+    user can access a URL that the owner user shared the link.
+
+    Raises Http404 in case of error (no read-only access allowed)
+
+    :param request_user: the user in the current request
+    :param username: the username
+    :return: a tuple: (is_owner, user)
+    '''
+
+    if username:
+        user = get_object_or_404(User, username=username)
+        gym = Gym.objects.get(id=gymId)
+        is_trainer = GymAdminConfig.objects.filter(gym=gym)
+
+        user = get_object_or_404(User, username=username)
+        is_user = GymUserConfig.objects.filter(user=user)
+
+        if is_trainer and is_user:
+            return user
+        else:
+            raise Http404('You are not allowed to access this page.')
 
 def normalize_decimal(d):
     '''
