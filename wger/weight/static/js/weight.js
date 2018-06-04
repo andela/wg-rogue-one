@@ -53,7 +53,7 @@ $(document).ready(function () {
   };
 
   username = $('#current-username').data('currentUsername');
-  url = '/weight/api/get_weight_data/' + username;
+  url = '/weight/api/get_weight_data/'+ username ;
 
   d3.json(url, function (json) {
     var data;
@@ -78,5 +78,55 @@ $(document).ready(function () {
       MG.data_graphic(chartParams);
     }
   });
+  let compared = []
+
+  $("#main_member_list input[type='checkbox']").change(function() {
+    if ($( "input:checked" ).length == 2){
+      $('#compareButton').prop('disabled', false)
+    }else{
+      $('#compareButton').prop('disabled', true)
+    }
+  });
+  $("#compareButton").click(function (){
+
+    setTimeout(() => {
+      var checkedUsers = $('#main_member_list input[type=\'checkbox\']');
+      checkedUsers.each((index)=>{
+        var gymId = $(checkedUsers[index]).data('gym');
+        var chartName = $(checkedUsers[index]).attr('value')
+        if (checkedUsers[index].checked){
+        url = '/weight/api/compare_weight_data/'+gymId+'/'+chartName;
+        var ourParams = {
+          animate_on_load: true,
+          full_width: true,
+          top: 10,
+          left: 30,
+          right: 10,
+          show_secondary_x_label: true,
+          xax_count: 10,
+          target: '#chart-'+chartName,
+          x_accessor: 'date',
+          y_accessor: 'weight',
+          min_y_from_data: true,
+          colors: ['#3465a4']
+        }
+        d3.json(url, function (json) {
+          
+          var data;
+          if (json.length) {
+            $('#weight_diagram').append("<div id=chart-"+chartName+"><h2>"+chartName+"</h2></div>");
+            data = MG.convert.date(json, 'date');
+          weightChart.data = data;
+      
+            // Plot the data
+            ourParams.data = data;
+            MG.data_graphic(ourParams);
+          }
+        });
+      } // end of if checked
+      });
+    }, 500);
+  });
+
 });
 
