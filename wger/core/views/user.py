@@ -61,8 +61,11 @@ from wger.weight.models import WeightEntry
 from wger.gym.models import (
     AdminUserNote,
     GymUserConfig,
-    Contract
+    GymAdminConfig,
+    Contract,
+    Gym
 )
+from wger.core.models import UserProfile
 
 logger = logging.getLogger(__name__)
 
@@ -129,6 +132,128 @@ def delete(request, user_pk=None):
                'form_action': form_action}
 
     return render(request, 'user/delete_account.html', context)
+
+
+@login_required()
+def delete_trainer_from_gym(request, user_pk=None, gym_pk=None):
+    '''
+    Delete a trainer from a gym, requires password confirmation first
+
+    If no user_pk is present, the user visiting the URL will be deleted, otherwise
+    a gym administrator is deleting a different user
+    '''
+    if user_pk and gym_pk:
+        user = get_object_or_404(User, id=user_pk)
+        gym = Gym.objects.get(pk=gym_pk)
+        user_gym = UserProfile.objects.get(user=user, gym=gym)
+
+        form_action = reverse('core:user:delete_trainer', kwargs={
+                              'user_pk': user_pk, 'gym_pk': gym_pk})
+
+        # Forbidden if the user has not enough rights, doesn't belong to the
+        # gym or is an admin as well. General admins can delete all trainers.
+        if not request.user.has_perm('gym.manage_gyms') \
+                and (not request.user.has_perm('gym.manage_gym')
+                     or request.user.userprofile.gym_id != user.userprofile.gym_id
+                     or user.has_perm('gym.manage_gym')
+                     or user.has_perm('gym.manage_gyms')):
+            return HttpResponseForbidden()
+    else:
+        user = request.user
+        form_action = reverse('core:user:delete_trainer_from_gym')
+
+    form = PasswordConfirmationForm(user=request.user)
+    if request.method == 'POST':
+        form = PasswordConfirmationForm(data=request.POST, user=request.user)
+        if form.is_valid():
+
+            user_gym.gym = None
+            user_gym.save()
+
+            messages.success(request, _('Trainer "{0}" was successfully \
+                                        deleted from this gym').format(user.username))
+
+            if not user_pk:
+                django_logout(request)
+                return HttpResponseRedirect(reverse('software:features'))
+            else:
+                gym_pk = request.user.userprofile.gym_id
+                return HttpResponseRedirect(reverse('gym:gym:user-list', kwargs={'pk': gym_pk}))
+    context = {'form': form,
+               'user_delete': user,
+               'form_action': form_action}
+
+    return render(request, 'user/delete_account.html', context)
+
+
+@login_required
+def deactivate_trainer(request, user_pk=None, gym_pk=None):
+    '''
+    Deactivate a trainer from a gym
+    '''
+
+    if user_pk and gym_pk:
+        trainer = get_object_or_404(User, pk=user_pk)
+
+        gym = Gym.objects.filter(id=gym_pk)
+
+        if not request.user.is_authenticated():
+            return HttpResponseForbidden()
+
+        if not request.user.has_perm('gym.manage_gyms') \
+                and not request.user.has_perm('gym.manage_gym'):
+            return HttpResponseForbidden()
+
+        if not request.user.has_perm('gym.manage_gyms')\
+            and request.user.has_perm('gym.manage_gym') \
+                and request.user.userprofile.gym != trainer.userprofile.gym:
+            return HttpResponseForbidden()
+
+        trainer_profile = UserProfile.objects.get(user=trainer, gym=gym)
+
+        trainer_profile.is_activated = False
+
+        trainer_profile.save()
+
+        messages.success(request, _('Trainer "{0}" was successfully \
+                                    deactivated from this gym').format(trainer.username))
+
+    return HttpResponseRedirect(reverse('gym:gym:user-list', kwargs=({'pk': gym_pk})))
+
+
+@login_required
+def activate_trainer(request, user_pk=None, gym_pk=None):
+    '''
+    Activate a trainer who was previously deactiavted from a gym
+    '''
+
+    if user_pk and gym_pk:
+        trainer = get_object_or_404(User, pk=user_pk)
+
+        gym = Gym.objects.filter(id=gym_pk)
+
+        if not request.user.is_authenticated():
+            return HttpResponseForbidden()
+
+        if not request.user.has_perm('gym.manage_gyms') \
+                and not request.user.has_perm('gym.manage_gym'):
+            return HttpResponseForbidden()
+
+        if not request.user.has_perm('gym.manage_gyms')\
+            and request.user.has_perm('gym.manage_gym') \
+                and request.user.userprofile.gym != trainer.userprofile.gym:
+            return HttpResponseForbidden()
+
+        trainer_profile = UserProfile.objects.get(user=trainer, gym=gym)
+
+        trainer_profile.is_activated = True
+
+        trainer_profile.save()
+
+        messages.success(request,
+                         _('Trainer "{0}" was successfully activated').format(trainer.username))
+
+    return HttpResponseRedirect(reverse('gym:gym:user-list', kwargs=({'pk': gym_pk})))
 
 
 @login_required()

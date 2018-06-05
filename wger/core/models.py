@@ -123,6 +123,8 @@ class UserProfile(models.Model):
     Flag to mark a temporary user (demo account)
     '''
 
+    is_activated = models.BooleanField(verbose_name=_('Shows status of Gym members'),
+                                       default=True)
     #
     # User preferences
     #
