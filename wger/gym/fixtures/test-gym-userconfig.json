@@ -115,5 +115,50 @@
             "include_inactive": true,
             "user": 24
         }
+    },
+    {
+        "pk": 14,
+        "model": "gym.gymuserconfig",
+        "fields": {
+            "gym": 3,
+            "include_inactive": true,
+            "user": 7
+        }
+    },
+    {
+        "pk": 15,
+        "model": "gym.gymuserconfig",
+        "fields": {
+            "gym": 3,
+            "include_inactive": true,
+            "user": 8
+        }
+    },
+    {
+        "pk": 16,
+        "model": "gym.gymuserconfig",
+        "fields": {
+            "gym": 3,
+            "include_inactive": true,
+            "user": 4
+        }
+    },
+    {
+        "pk": 17,
+        "model": "gym.gymuserconfig",
+        "fields": {
+            "gym": 3,
+            "include_inactive": true,
+            "user": 5
+        }
+    },
+    {
+        "pk": 18,
+        "model": "gym.gymuserconfig",
+        "fields": {
+            "gym": 3,
+            "include_inactive": true,
+            "user": 6
+        }
     }
 ]

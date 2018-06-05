@@ -41,7 +41,8 @@
             "show_comments": false, 
             "show_english_ingredients": false, 
             "user": 1,
-            "gym": 1
+            "gym": 1,
+            "is_activated": true
         }
     },
     {

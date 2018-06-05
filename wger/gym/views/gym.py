@@ -19,6 +19,7 @@ import logging
 
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.contrib.auth.models import (
     Group,
     User
@@ -56,6 +57,7 @@ from wger.utils.generic_views import (
     WgerDeleteMixin,
     WgerMultiplePermissionRequiredMixin)
 from wger.utils.helpers import password_generator
+from wger.core.models import UserProfile
 
 
 logger = logging.getLogger(__name__)
@@ -90,10 +92,17 @@ class GymUserListView(LoginRequiredMixin, WgerMultiplePermissionRequiredMixin, L
         '''
         Only managers and trainers for this gym can access the members
         '''
+        # has_permission = UserProfile.objects.get(user=request.user).is_activated
+
         if request.user.has_perm('gym.manage_gyms') \
             or ((request.user.has_perm('gym.manage_gym')
                  or request.user.has_perm('gym.gym_trainer'))
-                and request.user.userprofile.gym_id == int(self.kwargs['pk'])):
+                and request.user.userprofile.gym_id == int(
+                    self.kwargs['pk'])):
+            if not request.user.userprofile.is_activated:
+                messages.warning(request,
+                                 _('You have no access right to this gym'), 'danger')
+                return HttpResponseRedirect(reverse('core:dashboard'))
             return super(GymUserListView, self).dispatch(request, *args, **kwargs)
         return HttpResponseForbidden()
 
@@ -109,11 +118,14 @@ class GymUserListView(LoginRequiredMixin, WgerMultiplePermissionRequiredMixin, L
                                    'last_log': u.usercache.last_activity})
 
         # admins list
+        gym = get_object_or_404(Gym, id=self.kwargs['pk'])
+
         for u in Gym.objects.get_admins(self.kwargs['pk']):
             out['admins'].append({'obj': u,
                                   'perms': {'manage_gym': u.has_perm('gym.manage_gym'),
                                             'manage_gyms': u.has_perm('gym.manage_gyms'),
-                                            'gym_trainer': u.has_perm('gym.gym_trainer'),
+                                            'gym_trainer': UserProfile.objects.get
+                                            (user=u, gym=gym).is_activated,
                                             'any_admin': is_any_gym_admin(u)}
                                   })
         return out
