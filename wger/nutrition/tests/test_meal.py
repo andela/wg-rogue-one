@@ -23,7 +23,7 @@ from wger.core.tests.base_testcase import (
     WorkoutManagerEditTestCase,
     WorkoutManagerAddTestCase
 )
-from wger.nutrition.models import Meal
+from wger.nutrition.models import Meal,MealItem
 from wger.nutrition.models import NutritionPlan
 
 
@@ -60,6 +60,16 @@ class AddMealTestCase(WorkoutManagerAddTestCase):
     data = {'time': datetime.time(9, 2)}
     user_success = 'test'
     user_fail = 'admin'
+
+class AddMealItemTestCase(WorkoutManagerAddTestCase):
+    '''
+    Tests adding a Meal with meal items
+    '''
+    object_class = MealItem
+    url = reverse('nutrition:meal_item:add_meal', kwargs={'plan_pk': 4})
+    data = {'time': datetime.time(9, 2),'ingredient': 1,'amount': 1}
+    user_success = 'test'
+    user_fail = 'test1'
 
 
 class PlanOverviewTestCase(WorkoutManagerTestCase):
