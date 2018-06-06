@@ -31,6 +31,7 @@ class Html5TimeField(models.TimeField):
         Use our custom field
         '''
         defaults = {'form_class': Html5FormTimeField}
+
         defaults.update(kwargs)
         return super(Html5TimeField, self).formfield(**defaults)
 
@@ -45,5 +46,6 @@ class Html5DateField(models.DateField):
         Use our custom field
         '''
         defaults = {'form_class': Html5FormDateField}
+
         defaults.update(kwargs)
         return super(Html5DateField, self).formfield(**defaults)

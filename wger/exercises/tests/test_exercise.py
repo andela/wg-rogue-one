@@ -522,7 +522,7 @@ class ExerciseApiTest(WorkoutManagerTestCase):
         client = APIClient()
         response = client.get('/api/v2/exercises/')
         self.assertEqual(response.status_code, 200)
-        
+
     def test_exercise_read_only(self):
         '''
         Test that the post methods is not allowed

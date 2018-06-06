@@ -77,13 +77,15 @@ class ExerciseViewSet(viewsets.ModelViewSet):
         obj.set_author(self.request)
         obj.save()
 
+
 class ExercisesViewSet(viewsets.ReadOnlyModelViewSet):
     '''
     API endpoint for exercise objects
     '''
     queryset = Exercise.objects.all()
     serializer_class = ExercisesSerializer
-    
+
+
 @api_view(['GET'])
 def search(request):
     '''
