@@ -9,6 +9,7 @@
 
 {% block header %}
 <script src="{% static 'js/exercises.js' %}"></script>
+<script src="{% static 'js/muscles.js' %}"></script>
 
 <script>
 $(document).ready(function() {
@@ -28,9 +29,54 @@ $(document).ready(function() {
         wgerHighlightMuscle(this);
     });
 
-    // Highlight on click
+    var muscleSystem = $('#muscle-system');
+    // Add front muscles by default
+    muscleSystem.append( musclesFront );
+    $('#svg2').css({'transform':'translate(-23px, -36px) scale(0.75)', 'opacity':0});
 
+    // flip image to view front side
+    $('#flip-front').on('click', ()=>{
+        $('.muscles-back').remove();
+        $('.muscles-front').remove();
+        muscleSystem.css('background-image',
+            'url(/static/images/muscles/main/muscle-2.svg),' +
+            'url(/static/images/muscles/muscular_system_front.svg)');
+        muscleSystem.append( musclesFront );
+        $('#svg2').css({'transform':'translate(-23px, -36px) scale(0.75)', 'opacity':0});
+    });
+    // flip image to view back side
+    $('#flip-back').on('click', ()=>{
+        $('.muscles-front').remove();
+        muscleSystem.css('background-image',
+            'url(/static/images/muscles/main/muscle-11.svg),' +
+            'url(/static/images/muscles/muscular_system_back.svg)');
+        muscleSystem.append( musclesBack );
+        $('#svg2').css({'transform':'translate(-26px, -48px) scale(0.75)', 'opacity':0});
+    });
+
+    document.onmousemove = function(e){
+    if ($(e.target).is('path')){
+        var divid = event.target.getAttribute('myid');
+        var isFront = (event.target.getAttribute('is-front') === 'true') ? 'front' : 'back';
+        //Reset all other highlighted muscles
+        $muscle = $('.muscle');
+        $muscle.removeClass('muscle-active');
+        $muscle.addClass('muscle-inactive');
+
+        // highlight image muscle
+        $('#muscle-system').css('background-image',
+            'url(/static/images/muscles/main/muscle-'+ divid +'.svg),' +
+            'url(/static/images/muscles/muscular_system_' + isFront +'.svg)');
+
+        // Highlight the current one
+        $('li[data-target=muscle-' + divid +']').removeClass('muscle-inactive');
+        $('li[data-target=muscle-' + divid +']').addClass('muscle-active');
+        $('.exercise-list').hide();
+        $('#muscle-' + divid).show();
+    }
+}
 });
+
 </script>
 {% endblock %}
 
@@ -55,9 +101,9 @@ $(document).ready(function() {
         {% regroup muscle_list|first by is_front as muscle_group %}
         {% for group in muscle_group %}
             {% if group.grouper %}
-                <h4>{% trans "Front side" %}</h4>
+                <h4><button class="btn btn-default btn-sm" id="flip-front">{% trans "Front side" %}</button></h4>
             {% else %}
-                <h4>{% trans "Back side" %}</h4>
+                <h4><button class="btn btn-default btn-sm flip-img" id="flip-back">{% trans "Back side" %}</button></h4>
             {% endif %}
 
             <ul class="muscle-list">

@@ -274,6 +274,7 @@ class LastWeightHelper:
             last_log = WorkoutLog.objects.filter(user=self.user,
                                                  exercise=exercise,
                                                  reps=reps).order_by('-date')
+
             default_weight = '' if default_weight is None else default_weight
             weight = last_log[0].weight if last_log.exists() else default_weight
             self.last_weight_list[key] = weight
@@ -303,6 +304,7 @@ def timer(request, day_pk):
                     reps = exercise_dict['reps_list'][key]
                     rep_unit = exercise_dict['repetition_units'][key]
                     weight_unit = exercise_dict['weight_units'][key]
+
                     default_weight = last_log.get_last_weight(exercise,
                                                               reps,
                                                               exercise_dict['weight_list'][key])
@@ -331,6 +333,7 @@ def timer(request, day_pk):
                     reps = exercise_dict['reps_list'][i]
                     rep_unit = exercise_dict['repetition_units'][i]
                     weight_unit = exercise_dict['weight_units'][i]
+
                     default_weight = exercise_dict['weight_list'][i]
                     exercise = exercise_dict['obj']
 

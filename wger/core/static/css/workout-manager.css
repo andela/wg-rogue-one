@@ -20,7 +20,10 @@
  * This file contains custom classes and styles
  *
  **************************************************************/
-
+ #svg2{
+    transform: translate(-23px, -36px) scale(0.75);
+    opacity: 0;
+}
 #main-footer{
     background: none repeat scroll 0% 0% #EEE;
     border-top: 1px solid #E5E5E5;

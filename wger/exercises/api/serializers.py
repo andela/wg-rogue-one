@@ -32,12 +32,14 @@ class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
 
+
 class ExerciseImageSerializer(serializers.ModelSerializer):
     '''
     ExerciseImage serializer
     '''
     class Meta:
         model = ExerciseImage
+
 
 class ExercisesSerializer(serializers.ModelSerializer):
     '''
@@ -55,8 +57,8 @@ class ExercisesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         fields = ('id', 'status', 'license_author', 'license', 'category', 'equipment',
-                 'description', 'name', 'name_original', 'muscles', 'muscles_secondary',
-                 'creation_date', 'language', 'uuid', 'exerciseimage_set',)
+                  'description', 'name', 'name_original', 'muscles', 'muscles_secondary',
+                  'creation_date', 'language', 'uuid', 'exerciseimage_set',)
 
 
 class EquipmentSerializer(serializers.ModelSerializer):
