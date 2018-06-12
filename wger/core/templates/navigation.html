@@ -55,6 +55,7 @@
                                 <li><a href="{% url 'exercise:exercise:overview' %}">{% trans "Exercises" %}</a></li>
                                 <li><a href="{% url 'exercise:muscle:overview' %}">{% trans "Muscle overview" %}</a></li>
                                 <li><a href="{% url 'exercise:equipment:overview' %}">{% trans "Equipment overview" %}</a></li>
+                                <li><a href="{% url 'exercise:exercise:fitbit_overview' %}">{% trans "FitBit overview" %}</a></li>
                                 {% if user.is_authenticated and not user.userprofile.is_temporary and not trainer_identity %}
                                 <li class="divider"></li>
                                 <li><a href="{% url 'exercise:exercise:add' %}">{% trans "Add new exercise" %}</a><li>
@@ -84,6 +85,7 @@
                                rel="nofollow">{% trans "Weight" %} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'weight:overview' user.username %}" rel="nofollow">{% trans "Weight overview" %}</a></li>
+                                <li><a href="{% url 'weight:fitbit_overview' user.username %}" rel="nofollow">{% trans "Fitbit overview" %}</a></li>
                                 <li><a href="{% url 'weight:add' %}" rel="nofollow">{% trans "Add weight entry" %}</a></li>
                             </ul>
                         </li>
@@ -199,7 +201,7 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{% url 'core:user:preferences' %}">{% trans "My preferences" %}</a>
-                                    </li>
+                                    </li>                               
                                     {% if not trainer_identity %}
                                     <li class="divider"></li>
                                     <li>

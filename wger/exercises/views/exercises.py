@@ -59,6 +59,8 @@ from wger.utils.widgets import (
 )
 from wger.config.models import LanguageConfig
 from wger.weight.helpers import process_log_entries
+from wger.core.views.user import fetch_exercise_data
+from wger.utils.helpers import check_access
 
 
 logger = logging.getLogger(__name__)
@@ -149,6 +151,26 @@ def view(request, id, slug=None):
 
     return render(request, 'exercise/view.html', template_data)
 
+def fitbit_overview(request):
+    '''
+    Shows exercise data
+    '''
+    is_owner = check_access(request.user)
+
+    template_data = {}
+    data_list = []
+    try:
+        token = request.session['token']
+        data = fetch_exercise_data(request, token)
+    except:
+        # token doesnt exist
+        return HttpResponseRedirect(reverse('weight:overview',
+                                kwargs={'username': request.user.username}))
+  
+    
+    template_data['is_owner'] = is_owner
+    template_data['fitbit_exercise_data'] = data
+    return render(request, 'exercise/fitbit_overview.html', template_data)
 
 class ExercisesEditAddView(WgerFormMixin):
     '''
