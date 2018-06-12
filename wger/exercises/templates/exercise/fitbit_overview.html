@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n staticfiles wger_extras %}
+
+{#       #}
+{# Title #}
+{#       #}
+{% block title %}{% trans "FitBit Exercise overview" %}{% endblock %}
+
+{#        #}
+{# Header #}
+{#        #}
+{% block header %}
+
+{% endblock %}
+
+
+
+{#         #}
+{# Content #}
+{#         #}
+{% block content %}
+<div id="current-username" data-current-username="{{ owner_user.username }}"></div>
+
+
+{% if not fitbit_exercise_data %}
+<p>
+    {% trans "There are no Fitbit exercises entries." %}
+</p>
+{% endif %}
+
+
+{% if is_owner %}
+{% if fitbit_exercise_data %}
+<table class="table">
+    <tr>
+        <th>{% trans 'Exercise' %}</th>
+        <th>{% trans 'Description' %}</th>
+        <th>{% trans 'Duration (Hrs)' %}</th>
+    </tr>
+    {% for entry_detail in fitbit_exercise_data %}
+        <tr>
+            <td>{{ entry_detail.name }}</td>
+            <td>{{ entry_detail.description }}</td>
+            <td>{{ entry_detail.duration }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endif %}
+
+{% endblock %}
+
+
+{#          #}
+{# Side bar #}
+{#          #}
+{% block sidebar %}
+{% endblock %}
+

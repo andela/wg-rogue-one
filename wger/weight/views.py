@@ -42,10 +42,13 @@ from wger.weight.models import WeightEntry
 from wger.weight import helpers
 from wger.utils.helpers import check_access, compare_access
 from wger.utils.generic_views import WgerFormMixin
-
+from wger.core.views.fitbit import Fitbit
+from wger.core.views.user import fetch_weight_data
+import datetime 
 
 logger = logging.getLogger(__name__)
-
+fitbit_weight = []
+fitbit_weight_data = []
 
 class WeightAddView(WgerFormMixin, CreateView):
     '''
@@ -151,15 +154,35 @@ def overview(request, username=None):
                                     {'year': max_date.year,
                                      'month': max_date.month,
                                      'day': max_date.day}
-
+    # fitbit code for getting token
+    code = request.GET.get('code')
+    if code:
+        weight_data = fetch_weight_data(request, code)
+        if weight_data:
+            fitbit_weight.extend(weight_data)
     last_weight_entries = helpers.get_last_entries(user)
+
 
     template_data['is_owner'] = is_owner
     template_data['owner_user'] = user
     template_data['show_shariff'] = is_owner
     template_data['last_five_weight_entries_details'] = last_weight_entries
+    template_data['fitbit_weight'] = fitbit_weight
     return render(request, 'overview.html', template_data)
 
+def fitbit_overview(request, username=None):
+    '''
+    Shows a plot with the weight data
+    '''
+    is_owner, user = check_access(request.user, username)
+
+    template_data = {}
+
+    template_data['is_owner'] = is_owner
+    template_data['owner_user'] = user
+    template_data['show_shariff'] = is_owner
+    template_data['fitbit_weight'] = fitbit_weight
+    return render(request, 'fitbit_overview.html', template_data)
 
 @api_view(['GET'])
 def get_weight_data(request, username=None):
@@ -178,10 +201,34 @@ def get_weight_data(request, username=None):
         weights = WeightEntry.objects.filter(user=user)
 
     chart_data = []
+    fitbit_obj = {}
+    for log in fitbit_weight:
+        old_date = log['date']
+        date1 = datetime.datetime.strptime(old_date,"%B %d, %Y")
+        new_date = datetime.datetime.strftime(date1, "%Y-%m-%d")
+        fitbit_obj={
+            'date':new_date,
+            'weight':log['weight']
+        }
+        fitbit_weight_data.append(fitbit_obj)
 
     for i in weights:
         chart_data.append({'date': i.date,
                            'weight': i.weight})
+    chart_data.extend(fitbit_weight_data)
+
+    # Return the results to the client
+    return Response(chart_data)
+
+
+@api_view(['GET'])
+def get_fitbit_weight_data(request, username=None):
+    '''
+    Process the data to pass it to the JS libraries to generate an SVG image
+    '''
+    chart_data = []
+    print(fitbit_weight_data)
+    chart_data.extend(fitbit_weight)
 
     # Return the results to the client
     return Response(chart_data)
