@@ -14,28 +14,35 @@
     {% trans 'Login' as submit_text %}
     {% render_form_fields form submit_text %}
 </form>
-<hr/>
-<h3 class="text text-primary text-center">Login/Register with social apps</h3>
-<div class="row text-center">
-    <a href="{% url 'social:begin' 'facebook' %}"><i class="fa fa-4x fa-facebook"></i></a>&nbsp;&nbsp;<a href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-4x fa-twitter text-info"></i></a>&nbsp;&nbsp;<a href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa fa-4x fa-google text-danger"></i></a>
+<div class="row">
+    <div class="col-md-6">
+        <h4>{% trans "No account?" %}</h4>
+        <p>
+            <a href="{% url 'core:user:registration' %}" class="btn btn-block btn-default">
+                <span class="{% fa_class 'sign-in' %}"></span>
+                {% trans "Register" %}
+            </a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h4>{% trans "Forgot password?" %}</h4>
+        <p>
+            <a href="{% url 'core:user:password_reset' %}" class="btn btn-block btn-default">
+                <span class="{% fa_class 'key' %}"></span>
+                {% trans "Reset password" %}
+            </a>
+        </p>            
+    </div>
 </div>
 {% endblock %}
 
 
 {% block sidebar %}
-<h4>{% trans "No account?" %}</h4>
-<p>
-    <a href="{% url 'core:user:registration' %}" class="btn btn-block btn-default">
-        <span class="{% fa_class 'sign-in' %}"></span>
-        {% trans "Register" %}
-    </a>
-</p>
-
-<h4>{% trans "Forgot password?" %}</h4>
-<p>
-    <a href="{% url 'core:user:password_reset' %}" class="btn btn-block btn-default">
-        <span class="{% fa_class 'key' %}"></span>
-        {% trans "Reset password" %}
-    </a>
-</p>
+<h4 class="text text-primary">Sign in with social apps</h4>
+<div class="row">
+    <a class="btn btn-block btn-primary" href="{% url 'social:begin' 'facebook' %}"><i class="fa  fa-facebook"></i><span class="social-login"  id="social-facebook">  Login with Facebook</span></a>
+    <a class="btn btn-block btn-info" href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-twitter"></i><span class="social-login">  Login with Twitter</span></a>
+    <a class="btn btn-block btn-danger" href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa fa-google"></i><span class="social-login">  Login with Google</span></a>
+</div>
+<hr/>
 {% endblock %}

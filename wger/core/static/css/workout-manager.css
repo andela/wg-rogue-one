@@ -295,3 +295,12 @@ div.info a, div.info a:hover, div.info a:active{
 #shoutout h2:first-child {
     margin-top: 0;
 }
+
+.social-login{
+    font-size: 14px;
+    font-weight: bold;
+    margin-left:15px;
+}
+#social-facebook{
+    margin-right:-20px;
+}
