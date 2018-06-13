@@ -27,12 +27,13 @@ from django.views.generic import (
     UpdateView
 )
 
-from wger.exercises.models import Muscle
+from wger.exercises.models import Muscle, Exercise
 from wger.utils.generic_views import (
     WgerFormMixin,
     WgerDeleteMixin
 )
 from wger.utils.language import load_item_languages
+from wger.utils.cache import cache
 from wger.config.models import LanguageConfig
 
 logger = logging.getLogger(__name__)
