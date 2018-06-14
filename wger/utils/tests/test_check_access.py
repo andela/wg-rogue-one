@@ -54,6 +54,7 @@ class CheckAccessTestCase(WorkoutManagerTestCase):
         self.assertEqual(check_access(user_no_share), (True, user_no_share))
         self.assertRaises(Http404, check_access, user_no_share, 'not_a_username')
 
+
 class CompareAccessTestCase(WorkoutManagerTestCase):
     '''
     Test the "compare_access" helper function
@@ -67,6 +68,4 @@ class CompareAccessTestCase(WorkoutManagerTestCase):
         user_share = User.objects.get(pk=1)
         test_user = User.objects.filter(username='test')[0]
 
-        anon = AnonymousUser()
-
-        self.assertEqual(compare_access(user_share.username, 1 , 'test'), test_user)
+        self.assertEqual(compare_access(user_share.username, 1, 'test'), test_user)

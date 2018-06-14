@@ -25,6 +25,7 @@ from easy_thumbnails.signals import saved_file
 from wger.exercises.models import ExerciseImage, Muscle, Exercise
 from wger.utils.cache import delete_template_fragment_cache, get_template_cache_name, cache
 
+
 @receiver(pre_delete, sender=Muscle)
 def delete_exercise_template_on_delete(sender, instance, **kwargs):
     '''
@@ -33,11 +34,12 @@ def delete_exercise_template_on_delete(sender, instance, **kwargs):
 
     delete_template_fragment_cache('muscle-overview')
     exercises_to_update = Exercise.objects.filter(muscles=instance)
-    if len(exercises_to_update) >0:
+    if len(exercises_to_update) > 0:
         for exc in exercises_to_update:
 
             delete_template_fragment_cache('exercise-detail-muscles', exc.id, exc.language.id)
             delete_template_fragment_cache('exercise-overview', exc.language.id)
+
 
 @receiver(post_delete, sender=ExerciseImage)
 def delete_exercise_image_on_delete(sender, instance, **kwargs):
