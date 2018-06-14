@@ -73,7 +73,6 @@ class MealItemCreateView(WgerFormMixin, CreateView):
             else:
                 return HttpResponseForbidden()
         return super(MealItemCreateView, self).dispatch(request, *args, **kwargs)
-        
 
     def get_success_url(self):
         return reverse('nutrition:plan:view', kwargs={'id': self.meal.plan.id})
@@ -85,11 +84,11 @@ class MealItemCreateView(WgerFormMixin, CreateView):
         context = super(MealItemCreateView, self).get_context_data(**kwargs)
         if self.meal_id:
             context['form_action'] = reverse('nutrition:meal_item:add',
-                                         kwargs={'meal_id': self.meal.id})
+                                             kwargs={'meal_id': self.meal.id})
         else:
-            #create meal based on the nutrition plan id
+            # create meal based on the nutrition plan id
             context['form_action'] = reverse('nutrition:meal_item:add_meal',
-                                         kwargs={'plan_pk': self.kwargs['plan_pk']})
+                                             kwargs={'plan_pk': self.kwargs['plan_pk']})
         context['ingredient_searchfield'] = self.request.POST.get('ingredient_searchfield', '')
         context['plan_pk'] = self.plan_pk
         return context
@@ -97,14 +96,14 @@ class MealItemCreateView(WgerFormMixin, CreateView):
     def form_valid(self, form):
         '''
         Manually set the corresponding meal
-        '''  
+        '''
         if not self.meal_id:
             plan = get_object_or_404(NutritionPlan, pk=self.kwargs['plan_pk'])
             meal = Meal.objects.create(plan=plan, order=1)
             meal.time = form.cleaned_data['time']
             meal.save()
             self.meal = meal
-        
+
         form.instance.meal = self.meal
         form.instance.order = 1
         return super(MealItemCreateView, self).form_valid(form)
