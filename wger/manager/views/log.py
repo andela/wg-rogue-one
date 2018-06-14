@@ -119,7 +119,7 @@ def add(request, pk):
     for exercise_set in day.set_set.all():
         for exercise in exercise_set.exercises.all():
             for setting in Setting.objects.filter(set=exercise_set,
-                                                      exercise=exercise).order_by('order', 'id'):
+                                                  exercise=exercise).order_by('order', 'id'):
                 setting_list[exercise.id] = {'obj': setting}
 
             # Maximum possible values
@@ -144,7 +144,7 @@ def add(request, pk):
     WorkoutLogFormSet = modelformset_factory(WorkoutLog,
                                              form=WorkoutLogForm,
                                              exclude=('date', 'workout'),
-                                             extra=total_sets+added_sets)
+                                             extra=total_sets + added_sets)
     # Process the request
     if request.method == 'POST':
 

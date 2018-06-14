@@ -524,6 +524,9 @@ class DaysOfWeek(models.Model):
         '''
         return self.day_of_week
 
+    def __repr__(self):
+        return self.day_of_week
+
 
 @python_2_unicode_compatible
 class License(models.Model):

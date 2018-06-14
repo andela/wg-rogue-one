@@ -78,7 +78,7 @@ class WorkoutCanonicalFormTestCase(WorkoutManagerTestCase):
                                                     'backsecondary': [],
                                                     'front': [1]},
                                         'obj': Set.objects.get(pk=1),
-                                        'category': WorkoutType.objects.get(pk=1),}]}
+                                        'category': WorkoutType.objects.get(pk=1), }]}
         self.assertEqual(workout.canonical_representation['day_list'][0], canonical_form)
 
         canonical_form = {'days_of_week': {'day_list': [DaysOfWeek.objects.get(pk=4)],
@@ -112,7 +112,7 @@ class WorkoutCanonicalFormTestCase(WorkoutManagerTestCase):
                                                     'frontsecondary': [1], 'backsecondary': [1],
                                                     'front': []},
                                         'obj': Set.objects.get(pk=2),
-                                        'category': WorkoutType.objects.get(pk=1),}]}
+                                        'category': WorkoutType.objects.get(pk=1), }]}
         self.assertEqual(workout.canonical_representation['day_list'][1], canonical_form)
 
         canonical_form = {'days_of_week': {'day_list': [DaysOfWeek.objects.get(pk=5)],

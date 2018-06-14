@@ -68,4 +68,6 @@ class CompareAccessTestCase(WorkoutManagerTestCase):
         user_share = User.objects.get(pk=1)
         test_user = User.objects.filter(username='test')[0]
 
+        anon = AnonymousUser()
+
         self.assertEqual(compare_access(user_share.username, 1, 'test'), test_user)
