@@ -12,20 +12,27 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
+# DB SETTINGS
+dbengine = os.environ.get("WGER_DB_ENGINE") or 'postgresql'
+dbname = os.environ.get("WGER_DB_NAME") or 'wger'
+dbuser = os.environ.get("WGER_DB_NAME") or 'postgres'
+dbpassword = os.environ.get("WGER_DB_PASSWORD") or 'admin'
+dbhost = os.environ.get("WGER_DB_HOST") or 'localhost'
+dbport = os.environ.get("WGER_DB_PORT") or '5432'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('WG_NAME') or 'test_wger',
-        'USER': os.environ.get('WG_USER') or 'postgres',
-        'HOST': os.environ.get('WG_HOST') or 'localhost',
-        'PASSWORD': os.environ.get('WG_PASSWORD') or '',
-        'PORT': os.environ.get('WG_PORT') or '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/Users/asiimwebenard/.local/share/wger/database.sqlite',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'h*e8yqx#(k3a3nbxnde%7d3fo&@=tz6zv)-blgmtoxch5q0=n&'
+SECRET_KEY = '$xqoc9ut!^x%_642-#oz8=comw94$1iemg4zic(&!g(b__&nue'
 
 # Your reCaptcha keys
 RECAPTCHA_PUBLIC_KEY = ''
@@ -57,8 +64,3 @@ WGER_SETTINGS['EMAIL_FROM'] = 'wger Workout Manager <wger@example.com>'
 
 # Your twitter handle, if you have one for this instance.
 #WGER_SETTINGS['TWITTER'] = ''
-
-try:
-    from local_settings import *
-except ImportError:
-    pass

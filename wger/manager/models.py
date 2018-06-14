@@ -67,6 +67,7 @@ class Workout(models.Model):
                                help_text=_("A short description or goal of the workout. For "
                                            "example 'Focus on back' or 'Week 1 of program xy'."))
     user = models.ForeignKey(User, verbose_name=_('User'))
+    imported_from = models.CharField(max_length=100, blank=True, null=True, default='')
 
     def get_absolute_url(self):
         '''
@@ -444,7 +445,6 @@ class Day(models.Model):
             has_setting_tmp = True
             for exercise in set_obj.exercises.select_related():
                 setting_tmp = []
-                
 
                 # Muscles for this set
                 for muscle in exercise.muscles.all():
@@ -529,7 +529,7 @@ class Day(models.Model):
         tmp_days_of_week = []
         for day_of_week in self.day.select_related():
             tmp_days_of_week.append(day_of_week)
-     
+
         return {'obj': self,
                 'days_of_week': {
                     'text': u', '.join([six.text_type(_(i.day_of_week))
@@ -609,10 +609,12 @@ class WorkoutType(models.Model):
     )
 
     category = models.CharField(max_length=10,
-                            choices=TYPES, default=TYPE_DEFAULT)
+                                choices=TYPES, default=TYPE_DEFAULT)
 
     def __str__(self):
         return self.category
+
+
 @python_2_unicode_compatible
 class Setting(models.Model):
     '''
@@ -625,7 +627,7 @@ class Setting(models.Model):
     repetition_unit = models.ForeignKey(RepetitionUnit,
                                         verbose_name=_('Unit'),
                                         default=1)
-    
+
     category = models.ForeignKey(WorkoutType, on_delete=models.CASCADE, null=True)
     '''
     The repetition unit of a set. This can be e.g. a repetition, a minute, etc.
@@ -906,3 +908,19 @@ class WorkoutSession(models.Model):
         '''
         reset_workout_log(self.user_id, self.date.year, self.date.month)
         super(WorkoutSession, self).delete(*args, **kwargs)
+
+
+@python_2_unicode_compatible
+class ImportJsonDocument(models.Model):
+    """
+        Model for handling importing json files
+    """
+    json_document = models.FileField(upload_to='documents/')
+    user = models.ForeignKey(User, verbose_name=_('User'))
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        '''
+        Return a more human-readable representation
+        '''
+        return self.json_document

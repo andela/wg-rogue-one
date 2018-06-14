@@ -17,31 +17,37 @@
 import logging
 import uuid
 import datetime
+import json
+import os
 
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect, HttpResponseForbidden
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseRedirect, HttpResponseForbidden, HttpResponse
 from django.template.context_processors import csrf
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy, ugettext as _
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DeleteView, UpdateView
-
 from wger.core.models import (
     RepetitionUnit,
-    WeightUnit
+    WeightUnit,
+    DaysOfWeek
 )
 from wger.manager.models import (
     Workout,
     WorkoutSession,
     WorkoutLog,
     Schedule,
-    Day
+    Day,
+    Set,
+    ImportJsonDocument,
+    DaysOfWeek
 )
 from wger.manager.forms import (
     WorkoutForm,
     WorkoutSessionHiddenFieldsForm,
-    WorkoutCopyForm
+    WorkoutCopyForm,
+    DocumentForm
 )
 from wger.utils.generic_views import (
     WgerFormMixin,
@@ -49,6 +55,9 @@ from wger.utils.generic_views import (
 )
 from wger.utils.helpers import make_token
 
+from wger.manager.helpers import render_workout_day
+
+from wger.settings_global import SITE_ROOT
 
 logger = logging.getLogger(__name__)
 
@@ -121,6 +130,184 @@ def view(request, pk):
     template_data['show_shariff'] = is_owner
 
     return render(request, 'workout/view.html', template_data)
+
+
+@login_required
+def export_json(request, pk):
+    """
+        Handles import and export of files
+    """
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('manager:workout:view_imports')
+    form = DocumentForm()
+    workouts = Workout.objects.filter(user=request.user, id=pk)
+    information = list()
+    if not workouts:
+        return render(request, 'workout/imports.html',
+                      {'message': 'No imported workouts currently', 'user': request.user, 'form': form, })
+
+    for workout in workouts:
+        workout_information = dict()
+        workout_information['id'] = workout.id
+        workout_information['imported_from'] = str(request.user)
+        workout_information['creation_date'] = str(workout.creation_date)
+        workout_information['comment'] = workout.comment
+        trainings = Day.objects.filter(training=workout.id)
+        for training in trainings:
+            workout_information['workout_description'] = training.description
+            sets = Set.objects.filter(exerciseday_id=training)
+            workout_sets = list()
+            for s in sets:
+                workout_sets.append(s.sets)
+            workout_information['sets'] = str(workout_sets)
+            workout_information['days'] = str(training.day.all())
+            print(workout_information['days'])
+            set_exercises = workout.canonical_representation['day_list'][0]['set_list']
+            set_list = list()
+            for set_exercise in set_exercises:
+                set_info = dict()
+                list_of_exercises = list()
+                exercise_info = dict()
+                for info in set_exercise['exercise_list']:
+                    exercise_info['exercise'] = info['obj'].name
+                    exercise_info['settings'] = info['setting_list']
+                    exercise_info['comments'] = info['comment_list']
+                    list_of_exercises.append(exercise_info)
+                set_info['list_of_exercises'] = list_of_exercises
+                set_list.append(set_info)
+            workout_information['set_info'] = set_list
+            information.append(workout_information)
+
+            created_json_file = 'workouts-' + \
+                                str(request.user) + '-' + str(workout.id) + '-' + \
+                                datetime.datetime.now().strftime("%Y-%m-%d %H:%M").replace(' ', '::') + '.json'
+            file_path = SITE_ROOT + '/export_docs/' + created_json_file
+
+            with open(file_path, 'w') as json_file:
+                json.dump(information, json_file)
+
+            with open(file_path, 'rb') as json_file:
+                response = HttpResponse(json_file.read())
+                response['content-type'] = 'application/json'
+                response['Content-Disposition'] = 'attachment; filename={0}'.format(
+                    created_json_file)
+                response['Content-Length'] = len(response.content)
+                os.remove(file_path)
+                return response
+
+
+@login_required
+def view_imports(request):
+    """
+     Loads general presentation of imported workouts
+    """
+    imported_workouts = ImportJsonDocument.objects.filter(user=request.user)
+    form = DocumentForm()
+    if imported_workouts:
+        table_content = ''
+        for imported_workout in imported_workouts:
+            file_path = os.path.normpath(str(imported_workout.json_document))
+            with open(file_path, 'r') as json_doc:
+                data = json_doc.read()
+                workouts = json.loads(data)
+
+                for workout in workouts:
+                    table_content += '<tr>'
+                    table_content += '<td>' + \
+                                     "{:%d %b %Y}".format(imported_workout.uploaded_at) + '</td>'
+                    for key, value in workout.items():
+                        if key == 'id':
+                            workout_id = value
+                        if key == 'imported_from':
+                            imported_from = value
+                        if key == 'creation_date' or key == 'comment':
+                            continue
+                        if key != 'set_info' and key != 'id' and key != 'imported_from':
+                            table_content += '<td>' + value.strip('[]') + '</td>'
+                        if key == 'set_info':
+                            table_content += '<td>'
+                            for lists_of_exercises in value:
+                                for list_of_exercise in lists_of_exercises.values():
+                                    for exercise in list_of_exercise:
+                                        for key, information in exercise.items():
+                                            if key == 'exercise':
+                                                table_content += '<p><b>Exercise: </b>' + \
+                                                                 str(information) + '</p>'
+                                            if key == 'settings':
+                                                table_content += '<p><b>Reps: </b>' + \
+                                                                 '-'.join(information) + '</p>'
+                                            if key == 'comments':
+                                                table_content += '<p><b>Comments: </b>' + \
+                                                                 '<br>'.join(
+                                                                     information) + '</p><hr>'
+                            table_content += '</td>'
+                            url_path = reverse('manager:workout:import_workout', kwargs={
+                                               'imported_workout': workout_id, 'imported_from': imported_from})
+                            table_content += '<td><a href="' + url_path + '" class="btn btn-primary">Adopt Workout</a></td>'
+                    table_content += '</td>'
+        return render(request, 'workout/imports.html',
+                      {'imports': imported_workouts, 'table_content': table_content, 'user': request.user,
+                       'form': form, })
+    return render(request, 'workout/imports.html',
+                  {'message': 'No imported workouts currently', 'user': request.user, 'form': form, })
+
+
+@login_required
+def import_workout(request, imported_workout, imported_from):
+    workout = get_object_or_404(Workout, pk=int(imported_workout))
+
+    # Copy workout from original user
+    days = workout.day_set.all()
+
+    workout_copy = workout
+    workout_copy.pk = None
+    workout_copy.comment = 'Your Imported workout'
+    workout_copy.imported_from = imported_from
+    workout_copy.user = request.user
+    workout_copy.save()
+
+    # Copy the days
+    for day in days:
+        sets = day.set_set.all()
+
+        day_copy = day
+        days_of_week = [i for i in day.day.all()]
+        day_copy.pk = None
+        day_copy.training = workout_copy
+        day_copy.save()
+        for i in days_of_week:
+            day_copy.day.add(i)
+        day_copy.save()
+
+        # Copy the sets
+        for current_set in sets:
+            current_set_id = current_set.id
+            exercises = current_set.exercises.all()
+
+            current_set_copy = current_set
+            current_set_copy.pk = None
+            current_set_copy.exerciseday = day_copy
+            current_set_copy.save()
+
+            # Exercises has Many2Many relationship
+            current_set_copy.exercises = exercises
+
+            # Go through the exercises
+            for exercise in exercises:
+                settings = exercise.setting_set.filter(set_id=current_set_id)
+
+                # Copy the settings
+                for setting in settings:
+                    setting_copy = setting
+                    setting_copy.pk = None
+                    setting_copy.set = current_set_copy
+                    setting_copy.save()
+
+    return HttpResponseRedirect(reverse('manager:workout:view',
+                                        kwargs={'pk': workout.id}))
 
 
 @login_required

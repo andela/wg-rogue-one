@@ -112,7 +112,8 @@ def create(request, day_pk):
             for formset in formsets:
                 instances = formset['formset'].save(commit=False)
                 if not instances:
-                    setting = Setting(order=1, exercise=formset['exercise'], category=workOutType, set=set_obj)
+                    setting = Setting(
+                        order=1, exercise=formset['exercise'], category=workOutType, set=set_obj)
                     setting.save()
                 for instance in instances:
                     instance.set = set_obj
@@ -191,11 +192,11 @@ def edit(request, pk):
         workout_type = Setting.objects.filter(set=set_obj, exercise=exercise).first().category
         queryset = Setting.objects.filter(set=set_obj, exercise=exercise)
         formset = SettingFormset(queryset=queryset, prefix='exercise{0}'.format(exercise.id))
-        formsets.append({'exercise': exercise, 'formset': formset,})
+        formsets.append({'exercise': exercise, 'formset': formset, })
 
     if request.method == "POST":
         formsets = []
-        
+
         for exercise in set_obj.exercises.all():
             workout_type = Setting.objects.filter(set=set_obj, exercise=exercise).first().category
             formset = SettingFormset(request.POST,

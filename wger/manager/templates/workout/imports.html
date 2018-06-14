@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}{% trans "Your Imports &amp; Exports" %}{% endblock %}
+
+
+{% block content %}
+    {% if imports %}
+    <div class="table-responsive">
+        <table class="table table-hovered table-bordered table-checked table-hovered">
+            <tr>
+                <th>{% trans "Import Date"%}</th>
+                <th>{% trans "Description" %}</th>
+                <th>{% trans "Sets per Day"%}</th>
+                <th>{% trans "Workout Days"%}</th>
+                <th>{% trans "Overview" %}</th>
+                <th>{% trans "Action" %}</th>
+            </tr>
+            {{table_content|safe}}
+        </table>
+    </div>
+    {% else %}
+        <h4>{% trans message  %}</h4>
+    {% endif %}
+{% endblock %}
+
+
+{% block sidebar %}
+<h4>{% trans "Your imports" %}</h4>
+<p>{% blocktrans %}
+    This shows all your recent imported workouts
+    {% endblocktrans %}
+</p>
+<hr/>
+<h4>{%trans "Import Workout "%}</h4>
+<form action="{% url 'manager:workout:export_json' user.pk %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br/>
+    <input type="file" name="json_document" class="form-control" required="required" accept=".json,.JSON"/>
+    <input type="hidden" name="user" id="user" value="{{user.pk}}" >
+    <br/>
+    <button class="btn btn-primary btn-block" type="submit">{% trans "UPLOAD JSON FILE" %}</button>
+  </form>
+{% endblock %}
+

@@ -47,7 +47,8 @@ from wger.manager.models import (
     Day,
     Set,
     Setting,
-    WorkoutLog
+    WorkoutLog,
+    ImportJsonDocument
 )
 from wger.utils.widgets import (
     TranslatedSelectMultiple,
@@ -191,3 +192,12 @@ class WorkoutSessionHiddenFieldsForm(ModelForm):
                    'time_end': widgets.HiddenInput(),
                    'user': widgets.HiddenInput(),
                    'notes': widgets.Textarea(attrs={'rows': 3})}
+
+
+class DocumentForm(ModelForm):
+    '''
+    Form used for importing json docs
+    '''
+    class Meta:
+        model = ImportJsonDocument
+        fields = ('json_document', 'user')

@@ -85,6 +85,9 @@ patterns_workout = [
     url(r'^(?P<pk>\d+)/ical$',
         ical.export,
         name='ical'),
+    url(r'^(?P<pk>\d+)/export_json/$', workout.export_json, name='export_json'),
+    url(r'^view_imports$', workout.view_imports, name='view_imports'),
+    url(r'^import_workout/(?P<imported_workout>[0-9A-Za-z_\-]+)/(?P<imported_from>[0-9A-Za-z_\-]+)/$', workout.import_workout, name='import_workout'),
     url(r'^(?P<id>\d+)/pdf/log/(?P<images>[01]+)/(?P<comments>[01]+)/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$',
         pdf.workout_log,
         name='pdf-log'), #JS!
