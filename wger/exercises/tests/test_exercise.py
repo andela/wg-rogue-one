@@ -553,4 +553,3 @@ class ExerciseApiTest(WorkoutManagerTestCase):
         response = client.post('/api/v2/exercises/', data=data)
         # Test for method not allowed
         self.assertEqual(response.status_code, 405)
-        

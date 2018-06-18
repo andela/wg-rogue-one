@@ -186,6 +186,7 @@ def get_weight_data(request, username=None):
     # Return the results to the client
     return Response(chart_data)
 
+
 @api_view(['GET'])
 def compare_weight_data(request, gym=None, username=None):
     '''

@@ -192,6 +192,7 @@ def check_access(request_user, username=None):
     is_owner = request_user == user
     return is_owner, user
 
+
 def compare_access(request_user, gymId=None, username=None):
     '''
     Small helper function to check that the current (possibly unauthenticated)
@@ -216,6 +217,7 @@ def compare_access(request_user, gymId=None, username=None):
             return user
         else:
             raise Http404('You are not allowed to access this page.')
+
 
 def normalize_decimal(d):
     '''
