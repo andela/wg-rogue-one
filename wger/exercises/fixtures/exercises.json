@@ -7582,6 +7582,374 @@
         "model": "exercises.exercise"
     },
     {
+        "model": "exercises.exercise",
+        "pk": 387,
+        "fields": {
+            "license": 2,
+            "license_author": "Sean Nalewanyj",
+            "status": "2",
+            "category": 13,
+            "description": "<p>These are basically a horizontal row, but instead of pulling to the chest or waist like you would on most back exercises, the resistance is pulled toward the face.</p>",
+            "name": "Face Pulls",
+            "name_original": "Face Pulls",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "320c9b31-72cd-469a-8381-b030d4ec139e",
+            "muscles": [
+                18
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 388,
+        "fields": {
+            "license": 2,
+            "license_author": "Sean Nalewanyj",
+            "status": "2",
+            "category": 13,
+            "description": "<p>Rear delt dumbbell row\u00a0training works well when included as part of a complete shoulder workout, or it can be performed at the end of a back workout.</p>",
+            "name": "Rear Delt Dumbbell Rows",
+            "name_original": "Rear Delt Dumbbell Rows",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "ef9c1ab4-2bf6-4884-b0ac-78c90a2fb44f",
+            "muscles": [
+                18
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 389,
+        "fields": {
+            "license": 2,
+            "license_author": "Sean Nalewanyj",
+            "status": "2",
+            "category": 13,
+            "description": "<p>This is a direct isolation exercise that will train the rear delts effectively with minimal involvement from other muscle groups.</p>",
+            "name": "Bent Over Rear Lateral Cable Raise",
+            "name_original": "Bent Over Rear Lateral Cable Raise",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "f517d6d7-d003-47be-88de-77c1c3153f76",
+            "muscles": [
+                18
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                8
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 390,
+        "fields": {
+            "license": 2,
+            "license_author": "Sean Nalewanyj",
+            "status": "2",
+            "category": 13,
+            "description": "<p>Rear military presses, in particular, create a large amount of stress on the shoulder joint.\u00a0Using a backrest will help to prevent injury by providing lower back support and reducing improper arching of the back.</p>",
+            "name": "Rear Military Press",
+            "name_original": "Rear Military Press",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "810e435f-fd3a-4019-8097-5adf32c60217",
+            "muscles": [
+                18
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 391,
+        "fields": {
+            "license": 2,
+            "license_author": "Alex Savva",
+            "status": "2",
+            "category": 13,
+            "description": "\u00a0\n\n<p style=\"\">Sitting is overrated. While it might cause you to have a lower one-rep max, a standing dumbbell press better stimulates shoulder growth than a seated press.</p>\n",
+            "name": "Standing Dumbbell Press",
+            "name_original": "Standing Dumbbell Press",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "c520e426-16d2-49e0-8178-a2b8e2a4d5ca",
+            "muscles": [
+                17
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 392,
+        "fields": {
+            "license": 2,
+            "license_author": "Alex Savva",
+            "status": "2",
+            "category": 13,
+            "description": "<p>This triset targets the rear delts while hitting the medial and front heads as well. It's a great variation to throw into the end of your routine.</p>",
+            "name": "Bent-Over Reverse Fly 21s",
+            "name_original": "Bent-Over Reverse Fly 21s",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "6db51206-c9f1-47b6-85de-af3bb745cfba",
+            "muscles": [
+                17
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 393,
+        "fields": {
+            "license": 2,
+            "license_author": "Alex Savva",
+            "status": "2",
+            "category": 13,
+            "description": "<p>Take your standard dumbbell lateral raises to a new level. Using kettlebells will add an extra challenge for your forearms and shoulder stabilizers.</p>",
+            "name": "Lateral Raises With Kettlebells",
+            "name_original": "Lateral Raises With Kettlebells",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "66d74047-3d77-4e87-ab86-102984226796",
+            "muscles": [
+                17
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 394,
+        "fields": {
+            "license": 2,
+            "license_author": "Alex Savva",
+            "status": "2",
+            "category": 13,
+            "description": "<p>Neutral-Grip Sternum Chin-Up\u00a0does\u00a0not only hit your lats and rear delts harder than a traditional chin-up, it also blasts your core.</p>",
+            "name": "Neutral-Grip Sternum Chin-Up",
+            "name_original": "Neutral-Grip Sternum Chin-Up",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "1c9bb7f5-697d-4e85-a62a-bdc6d1365c69",
+            "muscles": [
+                17
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 395,
+        "fields": {
+            "license": 2,
+            "license_author": "Rachael Schultz",
+            "status": "2",
+            "category": 8,
+            "description": "<p>This simple motion helps target and strengthen your wrist flexors, which are crucial in building grip strength.</p>",
+            "name": "Dumbbell Wrist Flexion",
+            "name_original": "Dumbbell wrist flexion",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "760918b5-83bd-45da-8c49-581d80f8047e",
+            "muscles": [
+                19
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                8
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 396,
+        "fields": {
+            "license": 2,
+            "license_author": "Rachael Schultz",
+            "status": "2",
+            "category": 8,
+            "description": "<p>The inverse of the wrist flexion move, this extension exercise helps add size and strength to your wrist extensor muscles.</p>",
+            "name": "Dumbbell Wrist Extension",
+            "name_original": "Dumbbell wrist extension",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "7d946bff-7a1f-45e3-89ba-4e6f4eb71421",
+            "muscles": [
+                19
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                8
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 397,
+        "fields": {
+            "license": 2,
+            "license_author": "Rachael Schultz",
+            "status": "2",
+            "category": 8,
+            "description": "<p>Here, you\u2019ll work two crucial forearm muscles, \u00a0and\u00a0<em style=\"\">pronator teres</em>, as well as the\u00a0<em style=\"\">brachialis</em>, an assisting muscle that will help build elbow flexion.</p>",
+            "name": "Dumbbell Reverse Curl",
+            "name_original": "Dumbbell reverse curl",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "270e5485-50ef-48a7-8ad2-2a756d13840a",
+            "muscles": [
+                19
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 398,
+        "fields": {
+            "license": 2,
+            "license_author": "Rachael Schultz",
+            "status": "2",
+            "category": 8,
+            "description": "<p>This move builds the wrist and finger flexors, as well as engaging just about every other muscle in your body.\u00a0</p>",
+            "name": "Farmer Walks",
+            "name_original": "Farmer walks",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "8dd083c0-de7e-4417-8fa1-c2fcc59c822a",
+            "muscles": [
+                19
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 399,
+        "fields": {
+            "license": 2,
+            "license_author": "JODY BRAVERMAN",
+            "status": "2",
+            "category": 12,
+            "description": "<p>A compound exercise that works all the major muscle groups of the body, deadlifts target the upper erector spinae muscles.\u00a0</p>",
+            "name": "Deadlift",
+            "name_original": "Deadlift",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "7d0a7978-e1f3-42a2-9279-95f799f51cec",
+            "muscles": [
+                16
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 400,
+        "fields": {
+            "license": 2,
+            "license_author": "JODY BRAVERMAN",
+            "status": "2",
+            "category": 12,
+            "description": "<p>Back extensions can be performed in a number of ways with a variety of equipment. They can be done with or without weight.</p>",
+            "name": "Back Extension",
+            "name_original": "Back Extension",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "360dc323-c9f5-413a-b7ae-1ff955a6adf9",
+            "muscles": [
+                16
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 401,
+        "fields": {
+            "license": 2,
+            "license_author": "JODY BRAVERMAN",
+            "status": "2",
+            "category": 12,
+            "description": "<p>The Superman exercise requires no equipment and works the entire spine. Use a slow and controlled motion, and focus on using the erector spinae to power the movement.</p>",
+            "name": "Superman Exercise",
+            "name_original": "Superman Exercise",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "ea6dcb13-3558-4dea-8987-8c28ba34f084",
+            "muscles": [
+                16
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "exercises.exercise",
+        "pk": 402,
+        "fields": {
+            "license": 2,
+            "license_author": "JODY BRAVERMAN",
+            "status": "2",
+            "category": 12,
+            "description": "<p>This stretch, performed properly, is as much an erector spinae stretch as it is a hamstring stretch.</p>",
+            "name": "Standing Toe Touch",
+            "name_original": "Standing Toe Touch",
+            "creation_date": "2018-06-19",
+            "language": 2,
+            "uuid": "9ff1f016-ff86-47c5-9f9c-03dde6294277",
+            "muscles": [
+                16
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                4
+            ]
+        }
+    },
+    {
         "pk": 6,
         "fields": {
             "exercise": 33,
