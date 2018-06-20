@@ -44,6 +44,7 @@ class SetAddTestCase(WorkoutManagerAddTestCase):
     data = {'exercises': [1, ],
             'exercise_list': 1,  # Only for mobile version
             'sets': 4,
+            'workout-type': 1,
             'exercise1-TOTAL_FORMS': 4,
             'exercise1-INITIAL_FORMS': 0,
             'exercise1-MAX_NUM_FORMS': 1000,
@@ -64,6 +65,7 @@ class SetAddTestCase(WorkoutManagerAddTestCase):
                    'exercise1-INITIAL_FORMS',
                    'exercise1-MAX_NUM_FORMS',
                    'exercise_list',
+                   'workout-type',
                    'exercise1-0-reps',
                    'exercise1-0-repetition_unit',
                    'exercise1-0-weight_unit',
@@ -88,7 +90,7 @@ class SetAddTestCase(WorkoutManagerAddTestCase):
         post_data = {'exercises': exercises_id,
                      'exercise_list': 1,  # Only for mobile version
                      'sets': 4,
-
+                     'workout-type': 1,
                      'exercise1-TOTAL_FORMS': 4,
                      'exercise1-INITIAL_FORMS': 0,
                      'exercise1-MAX_NUM_FORMS': 1000,
@@ -198,6 +200,7 @@ class TestSetOrderTestCase(WorkoutManagerTestCase):
         nr_sets = 4
         post_data = {'exercises': exercises_id,
                      'exercise_list': exercises_id[0],  # Only for mobile version,
+                     'workout-type': 1,
                      'sets': nr_sets}
         for exercise_id in exercises_id:
             post_data['exercise{0}-TOTAL_FORMS'.format(exercise_id)] = nr_sets

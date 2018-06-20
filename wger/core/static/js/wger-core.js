@@ -119,6 +119,20 @@ function setProfileField(field, newValue) {
   });
 }
 
+function changeWorkoutType (event) {
+
+  if (event.value === '1') {
+    $('#id_sets').val(4);
+    $('#id_sets_value').html($('#id_sets').val());
+    updateAllExerciseFormset();
+  } else {
+    $('#id_sets').val(1);
+    $('#id_sets_value').html($('#id_sets').val());
+    updateAllExerciseFormset();
+  }
+}
+
+
 /*
  Get a single field from the user's profile.
  Synchronous request, use sparingly!
@@ -521,8 +535,13 @@ function wgerInitEditSet() {
 
   // Slider to set the number of sets
   $('#id_sets').on('change', function () {
-    updateAllExerciseFormset();
-    $('#id_sets_value').html($('#id_sets').val());
+    if ($('#workout-type').val() =='2'){
+      $('#id_sets').val(1);
+      $('#id_sets_value').html($('#id_sets').val());
+    }else{
+      updateAllExerciseFormset();
+      $('#id_sets_value').html($('#id_sets').val());
+    }
   });
 
   /*
@@ -696,5 +715,74 @@ $(document).ready(function () {
       '/' + uid +
       '/' + token;
     window.location.href = targetUrl;
+  });
+
+  // Handle the add entry event
+  // Handle the add entry event
+  $('.addEntry').on('click', function (event) {
+    event.preventDefault();
+    var $formset;
+    // get associated exercise
+    var entryMatches = $(this).closest('.workout-log-table').find('.exercise-id');
+    var exerciseId = entryMatches[0].value;
+    // generate id from number of actual entries
+    var generatedId = $(this).closest('#workout-wrap').find('.actual').length
+    // append a new entry
+    var name = 'name-'+generatedId
+    var entry =  `<td>
+                    <div>
+                        <input class="form-control narrow-input" id="id_form-`+ generatedId +`-reps" name="form-`+ generatedId +`-reps" type="number">
+                        <span class="help-block">
+                            
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select class="form-control narrow-input" id="id_form-`+ generatedId +`-repetition_unit" name="form-`+ generatedId +`-repetition_unit">
+                <option value="">---------</option>
+                <option value="6">Kilometers</option>
+                <option value="5">Miles</option>
+                <option value="4">Minutes</option>
+                <option value="1" selected="selected">Repetitions</option>
+                <option value="3">Seconds</option>
+                <option value="2">Until Failure</option>
+                </select>
+                        <span class="help-block">
+                            
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                    <input class="form-control narrow-input" id="id_form-`+ generatedId +`-weight" name="form-`+ generatedId +`-weight" step="any" type="number" value="0">
+                    <span class="help-block">
+                        
+                    </span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select class="form-control narrow-input" id="id_form-`+ generatedId +`-weight_unit" name="form-`+ generatedId +`-weight_unit">
+                <option value="">---------</option>
+                <option value="3">Body Weight</option>
+                <option value="5">Kilometers Per Hour</option>
+                <option value="6">Miles Per Hour</option>
+                <option value="4">Plates</option>
+                <option value="1" selected="selected">kg</option>
+                <option value="2">lb</option>
+                </select>
+                        <span class="help-block">
+                            
+                        </span>
+                    </div>
+                </td>`
+    $formset = $(this).closest('.workout-log-table').find('.form-body')
+    $formset.append('<tr class=\'actual\'>'+ entry +'</tr>');
+    $formset.trigger('create')
+    // create associated exercise input at the new created set
+    var setWraps = $(this).closest('.workout-log-table').find('.actual')
+    $(setWraps[setWraps.length-1]).append("<input type='hidden' name="+ name +" class='exercise-id' value ="+ exerciseId +">")
+    $(this).closest('#workout-wrap').find("#max-sets").val(generatedId+1)
   });
 });

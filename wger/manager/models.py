@@ -438,12 +438,13 @@ class Day(models.Model):
         muscles_back = []
         muscles_front_secondary = []
         muscles_back_secondary = []
-
+        category = ''
         for set_obj in self.set_set.select_related():
             exercise_tmp = []
             has_setting_tmp = True
             for exercise in set_obj.exercises.select_related():
                 setting_tmp = []
+                
 
                 # Muscles for this set
                 for muscle in exercise.muscles.all():
@@ -461,6 +462,7 @@ class Day(models.Model):
                 for setting in Setting.objects.filter(set=set_obj,
                                                       exercise=exercise).order_by('order', 'id'):
                     setting_tmp.append(setting)
+                    category = setting.category
 
                 # "Smart" textual representation
                 setting_text, setting_list, weight_list, reps_list, repetition_units, weight_units \
@@ -512,6 +514,7 @@ class Day(models.Model):
                         exercise['repetition_units'] = repetition_units
 
             canonical_repr.append({'obj': set_obj,
+                                   'category': category,
                                    'exercise_list': exercise_tmp,
                                    'is_superset': True if len(exercise_tmp) > 1 else False,
                                    'has_settings': has_setting_tmp,
@@ -526,7 +529,7 @@ class Day(models.Model):
         tmp_days_of_week = []
         for day_of_week in self.day.select_related():
             tmp_days_of_week.append(day_of_week)
-
+     
         return {'obj': self,
                 'days_of_week': {
                     'text': u', '.join([six.text_type(_(i.day_of_week))
@@ -594,6 +597,23 @@ class Set(models.Model):
 
 
 @python_2_unicode_compatible
+class WorkoutType(models.Model):
+    '''
+    Settings for an exercise (weight, reps, etc.)
+    '''
+    TYPE_DEFAULT = '1'
+    TYPE_DROPSET = '2'
+    TYPES = (
+        (TYPE_DEFAULT, _('Default')),
+        (TYPE_DROPSET, _('Dropset'))
+    )
+
+    category = models.CharField(max_length=10,
+                            choices=TYPES, default=TYPE_DEFAULT)
+
+    def __str__(self):
+        return self.category
+@python_2_unicode_compatible
 class Setting(models.Model):
     '''
     Settings for an exercise (weight, reps, etc.)
@@ -605,12 +625,14 @@ class Setting(models.Model):
     repetition_unit = models.ForeignKey(RepetitionUnit,
                                         verbose_name=_('Unit'),
                                         default=1)
+    
+    category = models.ForeignKey(WorkoutType, on_delete=models.CASCADE, null=True)
     '''
     The repetition unit of a set. This can be e.g. a repetition, a minute, etc.
     '''
 
     reps = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(600)],
-                               verbose_name=_('Amount'))
+                               verbose_name=_('Amount'), null=True)
     '''
     Amount of repetitions, minutes, etc. for a set.
 

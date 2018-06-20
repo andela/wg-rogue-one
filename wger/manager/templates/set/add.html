@@ -63,6 +63,18 @@ automatically becomes "4 x 10".{% endblocktrans %}</span>
         </div>
     </div>
     <div class="form-group">
+        <label class="col-md-3 control-label">
+            {% trans "Workout Type" %}
+        </label>
+        <div class="col-md-9">
+            <select onchange="changeWorkoutType(this)" id="workout-type" name="workout-type">
+                {% for typ in types %}
+                <option {% if typ.id = 1 %} selected {% endif %} value={{ typ.id }}>{{ typ }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
     <div class="col-md-12">
         <div id="formsets">
         {% for formset in formsets %}

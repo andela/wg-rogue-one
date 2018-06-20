@@ -87,6 +87,8 @@ def view(request, pk):
     canonical = workout.canonical_representation
     uid, token = make_token(user)
 
+    # for day in workout.canonical_representation['day_list']:
+
     # Create the backgrounds that show what muscles the workout will work on
     muscles_front = []
     muscles_back = []

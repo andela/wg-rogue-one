@@ -27,7 +27,8 @@ from wger.manager.models import (
     Workout,
     Day,
     Set,
-    Setting
+    Setting,
+    WorkoutType
 )
 from wger.utils.cache import cache_mapper
 
@@ -76,7 +77,8 @@ class WorkoutCanonicalFormTestCase(WorkoutManagerTestCase):
                                         'muscles': {'back': [2], 'frontsecondary': [],
                                                     'backsecondary': [],
                                                     'front': [1]},
-                                        'obj': Set.objects.get(pk=1)}]}
+                                        'obj': Set.objects.get(pk=1),
+                                        'category': WorkoutType.objects.get(pk=1),}]}
         self.assertEqual(workout.canonical_representation['day_list'][0], canonical_form)
 
         canonical_form = {'days_of_week': {'day_list': [DaysOfWeek.objects.get(pk=4)],
@@ -109,7 +111,8 @@ class WorkoutCanonicalFormTestCase(WorkoutManagerTestCase):
                                         'muscles': {'back': [2],
                                                     'frontsecondary': [1], 'backsecondary': [1],
                                                     'front': []},
-                                        'obj': Set.objects.get(pk=2)}]}
+                                        'obj': Set.objects.get(pk=2),
+                                        'category': WorkoutType.objects.get(pk=1),}]}
         self.assertEqual(workout.canonical_representation['day_list'][1], canonical_form)
 
         canonical_form = {'days_of_week': {'day_list': [DaysOfWeek.objects.get(pk=5)],
@@ -156,7 +159,8 @@ class WorkoutCanonicalFormTestCase(WorkoutManagerTestCase):
                            'has_settings': True,
                            'muscles': {'back': [2], 'frontsecondary': [1],
                                        'backsecondary': [1], 'front': []},
-                           'obj': Set.objects.get(pk=3)}]
+                           'obj': Set.objects.get(pk=3),
+                           'category': WorkoutType.objects.get(pk=1)}]
 
         self.assertEqual(day.canonical_representation['set_list'], canonical_form)
 

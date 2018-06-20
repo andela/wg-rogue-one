@@ -134,7 +134,8 @@
             "weight_unit_id": 1,
             "weight": null,
             "order": 1, 
-            "exercise": 1
+            "exercise": 1,
+            "category": 1
         }
     },
     {
@@ -148,7 +149,8 @@
             "weight_unit_id": 1,
             "weight": 15,
             "order": 1, 
-            "exercise": 2
+            "exercise": 2,
+            "category": 1
         }
     },
     {
@@ -162,7 +164,8 @@
             "weight_unit_id": 1,
             "weight": null,
             "order": 1, 
-            "exercise": 2
+            "exercise": 2,
+            "category": 1
         }
     },
 

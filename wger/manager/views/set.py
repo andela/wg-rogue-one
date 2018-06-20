@@ -30,6 +30,7 @@ from wger.manager.models import (
     Setting
 )
 from wger.exercises.models import Exercise
+from wger.manager.models import WorkoutType
 from wger.manager.forms import (
     SetForm,
     SetFormMobile,
@@ -98,32 +99,39 @@ def create(request, day_pk):
         for formset in formsets:
             if not formset['formset'].is_valid():
                 all_valid = False
-
+        workOutType = WorkoutType.objects.get(pk=request.POST.get('workout-type'))
         if form.is_valid() and all_valid:
             # Manually take care of the order, TODO: better move this to the model
             max_order = day.set_set.select_related().aggregate(models.Max('order'))
             form.instance.order = (max_order['order__max'] or 0) + 1
             form.instance.exerciseday = day
+            if request.POST.get('workout-type') == '2':
+                form.instance.sets = 1
             set_obj = form.save()
 
             for formset in formsets:
                 instances = formset['formset'].save(commit=False)
+                if not instances:
+                    setting = Setting(order=1, exercise=formset['exercise'], category=workOutType, set=set_obj)
+                    setting.save()
                 for instance in instances:
                     instance.set = set_obj
                     instance.order = 1
                     instance.exercise = formset['exercise']
+                    instance.category = workOutType
                     instance.save()
-
             return HttpResponseRedirect(reverse('manager:workout:view',
                                                 kwargs={'pk': day.get_owner_object().id}))
         else:
             logger.debug(form.errors)
 
     # Other context we need
+    types = WorkoutType.objects.all()
     context['form'] = form
     context['day'] = day
     context['max_sets'] = Set.MAX_SETS
     context['formsets'] = formsets
+    context['types'] = types
     context['form_action'] = reverse('manager:set:add', kwargs={'day_pk': day_pk})
     context['extend_template'] = 'base_empty.html' if request.is_ajax() else 'base.html'
     return render(request, 'set/add.html', context)
@@ -146,7 +154,8 @@ def get_formset(request, exercise_pk, reps=Set.DEFAULT_SETS):
     return render(request,
                   "set/formset.html",
                   {'formset': formset,
-                   'exercise': exercise})
+                   'exercise': exercise
+                   })
 
 
 @login_required
@@ -177,14 +186,18 @@ def edit(request, pk):
         return HttpResponseForbidden()
 
     formsets = []
+    workout_type = WorkoutType()
     for exercise in set_obj.exercises.all():
+        workout_type = Setting.objects.filter(set=set_obj, exercise=exercise).first().category
         queryset = Setting.objects.filter(set=set_obj, exercise=exercise)
         formset = SettingFormset(queryset=queryset, prefix='exercise{0}'.format(exercise.id))
-        formsets.append({'exercise': exercise, 'formset': formset})
+        formsets.append({'exercise': exercise, 'formset': formset,})
 
     if request.method == "POST":
         formsets = []
+        
         for exercise in set_obj.exercises.all():
+            workout_type = Setting.objects.filter(set=set_obj, exercise=exercise).first().category
             formset = SettingFormset(request.POST,
                                      prefix='exercise{0}'.format(exercise.id))
             formsets.append({'exercise': exercise, 'formset': formset})
@@ -212,6 +225,7 @@ def edit(request, pk):
                     # ...if not, create a new setting
                     except ObjectDoesNotExist:
                         instance.set = set_obj
+                        instance.category = workout_type
                         instance.order = 1
                         instance.exercise = formset['exercise']
                         instance.save()
@@ -221,6 +235,7 @@ def edit(request, pk):
 
     # Other context we need
     context = {}
+    context['workout_type'] = workout_type
     context['formsets'] = formsets
     context['form_action'] = reverse('manager:set:edit', kwargs={'pk': pk})
     return render(request, 'set/edit.html', context)
