@@ -252,7 +252,8 @@ def load_fixtures(context, settings_path=None):
     call_command("loaddata", path + "gym_config.json")
 
     # Manager
-    # path = os.path.join(current_dir, 'manager', 'fixtures/')
+    path = os.path.join(current_dir, 'wger', 'manager', 'fixtures/')
+    call_command("loaddata", path + "categories.json")
 
     # Exercises
     path = os.path.join(current_dir, 'wger', 'exercises', 'fixtures/')

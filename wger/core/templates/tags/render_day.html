@@ -14,27 +14,27 @@ $(document).ready(function() {
 </script>
 
 <table class="table table-bordered workout-table" id="table-day-{{ day.obj.id }}" data-id="{{ day.obj.id }}">
-<thead>
-    <tr id="day-{{ day.obj.id }}">
-        <th colspan="2" style="background: none repeat scroll 0% 0% #F5F5F5;">
+    <thead>
+        <tr id="day-{{ day.obj.id }}">
+            <th colspan="2" style="background: none repeat scroll 0% 0% #F5F5F5;">
 
-            {{ day.days_of_week.text }} – {{ day.obj.description }}
-            {% if editable %}
-            <span class="editoptions" style="float: right;">
-                <a href="{% url 'manager:day:delete' day.obj.id %}"
-                   title="{% trans 'Delete' %}">
-                    <span class="{% fa_class 'trash' %}"></span></a>
-                <a href="{% url 'manager:day:edit' day.obj.id %}"
-                   title="{% trans 'Edit' %}"
-                   class="wger-modal-dialog">
-                    <span class="{% fa_class 'pencil-square-o' %}"></span></a>
-                <a href="{% url 'manager:day:log' day.obj.id %}"
-                   title="{% trans 'Add weight log to this day' %}">
-                    <span class="{% fa_class 'line-chart' %}"></span></a>
-            </span>
-            {% endif %}
-        </th>
-    </tr>
+                {{ day.days_of_week.text }} – {{ day.obj.description }}
+                {% if editable %}
+                <span class="editoptions" style="float: right;">
+                    <a href="{% url 'manager:day:delete' day.obj.id %}"
+                    title="{% trans 'Delete' %}">
+                        <span class="{% fa_class 'trash' %}"></span></a>
+                    <a href="{% url 'manager:day:edit' day.obj.id %}"
+                    title="{% trans 'Edit' %}"
+                    class="wger-modal-dialog">
+                        <span class="{% fa_class 'pencil-square-o' %}"></span></a>
+                    <a href="{% url 'manager:day:log' day.obj.id %}"
+                    title="{% trans 'Add weight log to this day' %}">
+                        <span class="{% fa_class 'line-chart' %}"></span></a>
+                </span>
+                {% endif %}
+            </th>
+        </tr>
     </thead>
     <tbody>
         {% for set in day.set_list %}
@@ -91,6 +91,11 @@ $(document).ready(function() {
                                 {{ exercise.obj.name }}
                             </h4>
                             <p>{{exercise.setting_text}}</p>
+                            {% if exercise.setting_obj_list %}
+                            <p>
+                                    {{ set.category }}
+                            </p>
+                            {% endif %}
 
                             {% if editable %}
                             {% if not exercise.setting_list %}

@@ -1,0 +1,16 @@
+[
+    {
+        "pk": 1, 
+        "model": "manager.WorkoutType",
+        "fields": {
+            "category": "Default"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "manager.WorkoutType",
+        "fields": {
+            "category": "Dropset" 
+        }
+    }
+]

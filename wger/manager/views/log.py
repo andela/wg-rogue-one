@@ -38,7 +38,9 @@ from wger.manager.models import (
     WorkoutSession,
     Day,
     WorkoutLog,
-    Schedule
+    Schedule,
+    Setting,
+    Exercise
 )
 from wger.manager.forms import (
     HelperDateForm,
@@ -109,20 +111,22 @@ def add(request, pk):
     # exercise: the entries for weight and repetitions have no indicator to which
     # exercise they belong besides the form-ID, from Django's formset
     counter = 0
+    added_sets = 10
     total_sets = 0
     exercise_list = {}
+    setting_list = {}
     form_to_exercise = {}
-
     for exercise_set in day.set_set.all():
         for exercise in exercise_set.exercises.all():
+            for setting in Setting.objects.filter(set=exercise_set,
+                                                      exercise=exercise).order_by('order', 'id'):
+                setting_list[exercise.id] = {'obj': setting}
 
             # Maximum possible values
             total_sets += int(exercise_set.sets)
             counter_before = counter
             counter = counter + int(exercise_set.sets) - 1
             form_id_range = range(counter_before, counter + 1)
-
-            # Add to list
             exercise_list[exercise.id] = {'obj': exercise,
                                           'sets': int(exercise_set.sets),
                                           'form_ids': form_id_range}
@@ -131,12 +135,16 @@ def add(request, pk):
             # Helper mapping form-ID <--> Exercise
             for id in form_id_range:
                 form_to_exercise[id] = exercise
-
     # Define the formset here because now we know the value to pass to 'extra'
+    # if post, check new total sets and increase current set
+    new_sets = request.POST.get('max-sets', '0')
+    if int(new_sets) > 0:
+        added_sets = int(new_sets) - total_sets
+
     WorkoutLogFormSet = modelformset_factory(WorkoutLog,
                                              form=WorkoutLogForm,
                                              exclude=('date', 'workout'),
-                                             extra=total_sets)
+                                             extra=total_sets+added_sets)
     # Process the request
     if request.method == 'POST':
 
@@ -144,6 +152,13 @@ def add(request, pk):
         # that the form expects a value for the exercise which is not present in
         # the form (for space and usability reasons)
         post_copy = request.POST.copy()
+
+        # add new dropset entries to the post_copy
+        for i in range(0, int(new_sets)):
+            if i not in form_to_exercise:
+                val = request.POST.get('name-%s' % i)
+                new_exercise = Exercise.objects.get(pk=val)
+                form_to_exercise[i] = new_exercise
 
         for form_id in form_to_exercise:
             if post_copy.get('form-%s-weight' % form_id) or post_copy.get('form-%s-reps' % form_id):
@@ -211,6 +226,7 @@ def add(request, pk):
 
     template_data['day'] = day
     template_data['exercises'] = exercise_list
+    template_data['settings'] = setting_list
     template_data['exercise_list'] = exercise_list
     template_data['formset'] = formset
     template_data['dateform'] = dateform
