@@ -145,7 +145,7 @@ class EditWorkoutTestCase(WorkoutManagerEditTestCase):
     pk = 3
     user_success = 'test'
     user_fail = 'admin'
-    data = {'comment': 'A new comment'}
+    data = {'comment': 'A new comment', 'cycle_type': 'Microcycle'}
 
 
 class WorkoutOverviewTestCase(WorkoutManagerTestCase):
@@ -199,4 +199,4 @@ class WorkoutApiTestCase(api_base_test.ApiBaseResourceTestCase):
     resource = Workout
     private_resource = True
     special_endpoints = ('canonical_representation',)
-    data = {'comment': 'A new comment'}
+    data = {'comment': 'A new comment', 'cycle_type': 'Microcycle'}
