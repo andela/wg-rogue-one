@@ -61,6 +61,7 @@ from wger.config.models import LanguageConfig
 from wger.weight.helpers import process_log_entries
 from wger.core.views.user import fetch_exercise_data
 from wger.utils.helpers import check_access
+from wger.core.models import Language
 
 
 logger = logging.getLogger(__name__)
@@ -80,6 +81,20 @@ class ExerciseListView(ListView):
         Filter to only active exercises in the configured languages
         '''
         languages = load_item_languages(LanguageConfig.SHOW_ITEM_EXERCISES)
+        query_language = self.request.GET.get('lang', None)
+        language = None
+        self.active_lang = None
+
+        if query_language:
+            lang = Language.objects.filter(short_name=query_language)
+            if lang.exists():
+                self.active_lang = lang.first()
+                language = self.active_lang.id
+        if language:
+            return Exercise.objects.accepted() \
+                .filter(language=language) \
+                .order_by('category__id') \
+                .select_related()
         return Exercise.objects.accepted() \
             .filter(language__in=languages) \
             .order_by('category__id') \
@@ -91,6 +106,7 @@ class ExerciseListView(ListView):
         '''
         context = super(ExerciseListView, self).get_context_data(**kwargs)
         context['show_shariff'] = True
+        context['active_lang'] = self.active_lang
         return context
 
 

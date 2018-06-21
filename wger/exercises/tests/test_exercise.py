@@ -514,6 +514,18 @@ class WorkoutCacheTestCase(WorkoutManagerTestCase):
         for workout_id in workout_ids:
             self.assertFalse(cache.get(cache_mapper.get_workout_canonical(workout_id)))
 
+    def test_exercise_language_filter_works(self):
+        """
+        Test exercise filter language works
+        """
+        self.user_login()
+        response = self.client.get(
+            reverse('exercise:exercise:overview'), {'active_lang': 'en'})
+        self.assertEqual(5, len(response.context['exercises']))
+        response = self.client.get(
+            reverse('exercise:exercise:overview'), {'active_lang': 'de'})
+        self.assertEqual(5, len(response.context['exercises']))
+
 
 class ExerciseApiTest(WorkoutManagerTestCase):
     def test_exercise_read_only_endpoint(self):
