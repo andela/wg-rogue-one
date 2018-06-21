@@ -123,13 +123,11 @@ function changeWorkoutType (event) {
 
   if (event.value === '1') {
     $('#id_sets').val(4);
-    $('#id_sets_value').html($('#id_sets').val());
-    updateAllExerciseFormset();
   } else {
     $('#id_sets').val(1);
-    $('#id_sets_value').html($('#id_sets').val());
-    updateAllExerciseFormset();
   }
+  $('#id_sets_value').html($('#id_sets').val());
+  updateAllExerciseFormset();
 }
 
 
@@ -244,12 +242,38 @@ function modalDialogFormEdit() {
   $form = $('#ajax-info-content').find('form');
   $submit = $($form).find('#form-save');
 
+  $('#id_meal_category').on('change', function(e) {
+    if($(this).val() == '1'){
+      $('#id_time').closest('.form-group').removeClass("has-error");
+      $('#id_time').siblings('span.help-block').html('');
+    }
+  })
+
   $submit.click(function (e) {
     var formData;
     var formAction;
     e.preventDefault();
     formAction = $form.attr('action');
     formData = $form.serialize();
+    var mealId = $form.find('#id_meal_category').val();
+    if(mealId == '2'){
+      var timeElement = $form.find('#id_time');
+      var selectedTime = timeElement.val()
+      if(selectedTime == ''){
+        $(timeElement).closest('.form-group').removeClass("has-error").addClass("has-error");
+        $(timeElement).siblings('span.help-block').html('Previous meal time can not be null');
+        return false;
+      }
+      var now = new Date();
+      var nowTime = new Date((now.getMonth()+1) + "/" + now.getDate() + "/" + now.getFullYear() + " " + now.getHours()+":"+now.getMinutes());
+      var mealTime = new Date((now.getMonth()+1) + "/" + now.getDate() + "/" + now.getFullYear() + " " + selectedTime);
+      if (mealTime.getTime() > nowTime.getTime()) {
+        $(timeElement).closest('.form-group').removeClass("has-error").addClass("has-error");
+        $(timeElement).siblings('span.help-block').html('Invalid previous meal time.');
+        return false;
+      }
+    }
+    
 
     // Unbind all click elements, so the form doesn't get submitted twice
     // if the user clicks 2 times on the button (while there is already a request
@@ -785,4 +809,5 @@ $(document).ready(function () {
     $(setWraps[setWraps.length-1]).append("<input type='hidden' name="+ name +" class='exercise-id' value ="+ exerciseId +">")
     $(this).closest('#workout-wrap').find("#max-sets").val(generatedId+1)
   });
+  
 });

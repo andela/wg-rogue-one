@@ -109,11 +109,21 @@ function wgerCustomModalInit()
                     <span class="{% fa_class 'pencil-square-o' %}"></span></a>
             </span>
             {% endif %}
-            </td>
-            <td class="align-right">{{item.get_nutritional_values.energy|floatformat}}</td>
-            <td class="align-right">{{item.get_nutritional_values.protein|floatformat}}</td>
-            <td class="align-right">{{item.get_nutritional_values.carbohydrates|floatformat}}</td>
-            <td class="align-right">{{item.get_nutritional_values.fat|floatformat}}</td>
+            <p>
+                <span class="label label-default">
+                {% if item.meal_category == '1' %}
+                  New Meal
+                {% else %}
+                  Previous Meal
+                {% endif %}
+                </span>
+            </p>
+            
+        </td>
+        <td class="align-right">{{item.get_nutritional_values.energy|floatformat}}</td>
+        <td class="align-right">{{item.get_nutritional_values.protein|floatformat}}</td>
+        <td class="align-right">{{item.get_nutritional_values.carbohydrates|floatformat}}</td>
+        <td class="align-right">{{item.get_nutritional_values.fat|floatformat}}</td>
 </tr>
     {% empty %}
     {% if is_owner %}

@@ -30,6 +30,7 @@ class EditMealItemUnitTestCase(WorkoutManagerEditTestCase):
     url = 'nutrition:meal_item:edit'
     pk = 4
     data = {'amount': 1,
+            'meal_category': '1',
             'ingredient': 1,
             'weight_unit': 1}
 
@@ -43,6 +44,7 @@ class EditMealItemWeightTestCase(WorkoutManagerEditTestCase):
     url = 'nutrition:meal_item:edit'
     pk = 4
     data = {'amount': 100,
+            'meal_category': '1',
             'ingredient': 1}
 
 
@@ -54,6 +56,7 @@ class AddMealItemUnitTestCase(WorkoutManagerAddTestCase):
     object_class = MealItem
     url = reverse('nutrition:meal_item:add', kwargs={'meal_id': 3})
     data = {'amount': 1,
+            'meal_category': '1',
             'ingredient': 1,
             'weight_unit': 1}
 
@@ -66,6 +69,7 @@ class AddMealItemWeightTestCase(WorkoutManagerAddTestCase):
     object_class = MealItem
     url = reverse('nutrition:meal_item:add', kwargs={'meal_id': 3})
     data = {'amount': 100,
+            'meal_category': '1',
             'ingredient': 1}
 
 
@@ -78,5 +82,6 @@ class MealItemApiTestCase(api_base_test.ApiBaseResourceTestCase):
     private_resource = True
     special_endpoints = ('nutritional_values',)
     data = {'meal': 2,
+            'meal_category': '1',
             'amount': 100,
             'ingredient': 1}

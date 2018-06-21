@@ -581,7 +581,12 @@ class MealItem(models.Model):
     '''
     An item (component) of a meal
     '''
-
+    NEW_MEAL = '1'
+    PREVIOUS_MEAL = '2'
+    MEAL_CATEGORIES = (
+        (NEW_MEAL, _('New meal')),
+        (PREVIOUS_MEAL, _('Previous meal'))
+    )
     meal = models.ForeignKey(Meal,
                              verbose_name=_('Nutrition plan'),
                              editable=False)
@@ -603,6 +608,10 @@ class MealItem(models.Model):
     time = Html5TimeField(null=True,
                           blank=True,
                           verbose_name=_('Time (approx)'))
+    meal_category = models.CharField(verbose_name=_('Meal categories'),
+                                       choices=MEAL_CATEGORIES,
+                                       default=NEW_MEAL,
+                                       max_length=20)
 
     def __str__(self):
         '''
