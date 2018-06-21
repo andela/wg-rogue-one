@@ -63,25 +63,53 @@ $(document).ready(function() {
 </p>
 {% endif %}
 
+{% if workout.cycle_type %}
+<p>
+   <strong>{% trans "Plan" %}:</strong> {{workout.cycle_type}}
+</p>
+{% endif %}
+
 {% for day in workout.canonical_representation.day_list %}
     <div id="div-day-{{ day.obj.id }}">
         {% render_day day.obj is_owner %}
     </div>
 {% empty %}
     {% if is_owner %}
+        {% if not workout.cycle_type %}
         <p>
-            <a href="{% url 'manager:day:add' workout.id %}" class="wger-modal-dialog btn btn-default btn-block">
-            {% trans "No days for this workout." %}
-            {% trans "Add training day" %}
-            </a>
-        </p>
+                            <a href="{% url 'manager:workout:edit' workout.id %}" class="wger-modal-dialog btn btn-default btn-block">
+                            {% trans "Set a cycle type and optionally a goal for this workout" %}
+                            </a>
+                        </p>
+                    {% else %}
+                        <p>
+                            <a href="{% url 'manager:day:add' workout.id %}" class="wger-modal-dialog btn btn-default btn-block">
+                                {% if "Microcycle" in workout.cycle_type  %}
+                                    {% trans "No days for this workout." %}
+                                    {% trans "Add training day" %}
+                                {% elif "Mesocycle" in workout.cycle_type  %}
+                                    {% trans "No weeks for this workout." %}
+                                    {% trans "Add training week" %}
+                                {% elif "Macrocycle" in workout.cycle_type  %}
+                                    {% trans "No months for this workout." %}
+                                    {% trans "Add training month" %}
+                                {% endif %}
+                            </a>
+                        </p>
+                        {% endif %}
     {% endif %}
 {% endfor %}
 
 {% if is_owner %}
-<p>
-    <a href="{% url 'manager:day:add' workout.id %}" class="wger-modal-dialog">{% trans "Add training day" %}</a>
-    |
+<a href="{% url 'manager:day:add' workout.id %}" class="wger-modal-dialog">
+                {% if "Microcycle" in workout.cycle_type  %}
+                    {% trans "Add training day" %}
+                {% elif "Mesocycle" in workout.cycle_type  %}
+                    {% trans "Add training week" %}
+                {% elif "Macrocycle" in workout.cycle_type  %}
+                    {% trans "Add training month" %}
+                {% endif %}
+            </a>
     <a id="exercise-comments-toggle" href="{% url 'core:user:preferences' %}">{% trans "Show/Hide exercise comments" %}</a>
 </p>
 {% endif %}
@@ -96,9 +124,11 @@ $(document).ready(function() {
 <h4>{% trans "Steps" %}</h4>
 
 <ol>
+    {% if "Microcycle" in workout.cycle_type  %}
     <li>{% trans "Add training days" %}</li>
     <li>{% trans "Add workout sets to days" %}</li>
     <li>{% trans "Set the repetitions for each set" %}</li>
+    {% endif %}
 </ol>
 
 

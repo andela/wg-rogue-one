@@ -180,7 +180,7 @@
     {% if editable %}
     <a href="{% url 'manager:set:add' day.obj.id %}"
        class="list-group-item list-group-item-success wger-modal-dialog">
-           {% trans "No exercises selected for this day." %}<br>
+           {% trans "No exercises selected for this cycle." %}<br>
            {% trans "Add one now." %}
     </a>
     {% endif %}
@@ -190,7 +190,7 @@
     {% if editable %}
         <a href="{% url 'manager:set:add' day.obj.id %}" class="list-group-item list-group-item-success wger-modal-dialog">
             <span class="{% fa_class 'plus' %}"></span>
-            {% trans "Add exercises to this workout day" %}
+            {% trans "Add exercises to this workout cycle" %}
         </a>
     {% endif %}
     {% endif %}
