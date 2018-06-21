@@ -8,7 +8,39 @@
 <!--
         Title
 -->
-{% block title %}{% trans "Exercises" %}{% endblock %}
+
+{% block title %}{% trans "Exercises" %}
+<span style="margin-left: 260px; font-size: 20px">View exercises by language:</span>
+<div class="btn-group" style="float:right; display: inline-block;">
+    <button id="filter-lang" type="button" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown" style="padding: 5px">
+        {% if active_lang %}
+        {{active_lang.full_name}}
+        {% else %}
+        Select
+        {% endif %}
+    <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href={% url 'exercise:exercise:overview' %}></a></li>
+        {% for short_name, full_name in languages %}
+        <li style="margin-left: 15px;">
+            <img src="/static/images/icons/flag-{{ short_name }}.svg"
+                width="18"
+                height="11"
+                alt="{% trans full_name %}"
+                title="{% trans full_name %}"
+                style="border: 1px solid #151515;">
+            <span>
+                <a href="{% url 'exercise:exercise:overview' %}?lang={{ short_name }}">
+                    {% trans full_name %}
+                </a>
+            </span>
+            <li class="divider"></li>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
 
 
 
@@ -38,7 +70,7 @@ $(document).ready(function() {
 -->
 {% block content %}
 
-{% cache cache_timeout exercise-overview language.id %}
+{% cache 1 exercise-overview language.id %}
 {% regroup exercises by category as exercise_list %}
 
 <ul class="nav nav-tabs">

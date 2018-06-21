@@ -40,7 +40,7 @@ from wger.utils.generic_views import (
 from wger.utils.constants import PAGINATION_OBJECTS_PER_PAGE
 from wger.utils.language import load_language, load_ingredient_languages
 from wger.utils.cache import cache_mapper
-
+from wger.core.models import Language
 
 logger = logging.getLogger(__name__)
 
@@ -64,10 +64,20 @@ class IngredientListView(ListView):
         (the user can also want to see ingredients in English, in addition to his
         native language, see load_ingredient_languages)
         '''
-        languages = load_ingredient_languages(self.request)
-        return (Ingredient.objects.filter(language__in=languages)
-                                  .filter(status__in=Ingredient.INGREDIENT_STATUS_OK)
-                                  .only('id', 'name'))
+        query_language = self.request.GET.get('lang', None)
+        language = None
+        self.active_lang = None
+
+        if query_language:
+            lang = Language.objects.filter(short_name=query_language)
+            if lang.exists():
+                self.active_lang = lang.first()
+                language = self.active_lang.id
+        if language:
+            return (Ingredient.objects.filter(language=language)
+                    .filter(status__in=Ingredient.INGREDIENT_STATUS_OK).only('id', 'name'))
+        return (Ingredient.objects.filter(
+                status__in=Ingredient.INGREDIENT_STATUS_OK).only('id', 'name'))
 
     def get_context_data(self, **kwargs):
         '''
@@ -75,6 +85,7 @@ class IngredientListView(ListView):
         '''
         context = super(IngredientListView, self).get_context_data(**kwargs)
         context['show_shariff'] = True
+        context['active_lang'] = self.active_lang
         return context
 
 
