@@ -41,7 +41,6 @@ from wger.utils.cache import (
 )
 from wger.utils.fields import Html5DateField
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -507,7 +506,7 @@ class Day(models.Model):
                     if len(exercise['setting_list']) > common_reps:
                         exercise['setting_list'].pop(-1)
                         exercise['setting_obj_list'].pop(-1)
-                        setting_text, setting_list, weight_list,\
+                        setting_text, setting_list, weight_list, \
                             reps_list, repetition_units, weight_units = \
                             reps_smart_text(exercise['setting_obj_list'], set_obj)
                         exercise['setting_text'] = setting_text
@@ -627,7 +626,6 @@ class Setting(models.Model):
     repetition_unit = models.ForeignKey(RepetitionUnit,
                                         verbose_name=_('Unit'),
                                         default=1)
-
     category = models.ForeignKey(WorkoutType, on_delete=models.CASCADE, null=True)
     '''
     The repetition unit of a set. This can be e.g. a repetition, a minute, etc.
@@ -772,7 +770,10 @@ class WorkoutLog(models.Model):
             date = self.date
 
         try:
-            return WorkoutSession.objects.filter(user=self.user).get(date=date)
+            try:
+                return WorkoutSession.objects.filter(user=self.user).get(logs=self)
+            except:
+                return WorkoutSession.objects.filter(user=self.user).get(date=date)
         except WorkoutSession.DoesNotExist:
             return None
 
@@ -864,6 +865,11 @@ class WorkoutSession(models.Model):
     '''
     Time the workout session ended
     '''
+
+    logs = models.ForeignKey(WorkoutLog,
+                             verbose_name=_('Workout Log'),
+                             null=True,
+                             blank=True)
 
     def __str__(self):
         '''
