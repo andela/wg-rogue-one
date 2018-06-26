@@ -25,6 +25,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
+import datetime
 from wger.gym.models import Gym
 
 from wger.utils.constants import TWOPLACES
@@ -313,6 +314,11 @@ by the US Department of Agriculture. It is extremely complete, with around
                                                    validators=[MinValueValidator(0),
                                                                MaxValueValidator(30)],
                                                    default=0)
+    
+    ''' Allow user creation via api '''
+
+    can_create_users = models.BooleanField(default=False)
+
     '''Number of Days for email weight reminder'''
 
     @property
@@ -654,3 +660,15 @@ class WeightUnit(models.Model):
         This is done basically to not litter the code with magic IDs
         '''
         return self.id in (1, 2)
+
+class RestAPIUsers(models.Model):
+    '''
+    users created by the rest api
+    '''
+
+    user = models.OneToOneField(User)
+    registered_by = models.ForeignKey(User, related_name=_('api_user_creator'))
+    registered_on = models.DateTimeField(default=datetime.datetime.now())
+
+    def __str__(self):
+        return user

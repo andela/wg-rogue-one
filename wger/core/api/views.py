@@ -35,8 +35,8 @@ from wger.core.api.serializers import (
     RepetitionUnitSerializer,
     WeightUnitSerializer
 )
-from wger.core.api.serializers import UserprofileSerializer
-from wger.utils.permissions import UpdateOnlyPermission, WgerPermission
+from wger.core.api.serializers import UserprofileSerializer, RegisterUserSerializer
+from wger.utils.permissions import UpdateOnlyPermission, WgerPermission, CanRegisterUserViaAPI
 
 
 class UserProfileViewSet(viewsets.ModelViewSet):
@@ -121,3 +121,25 @@ class WeightUnitViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = WeightUnitSerializer
     ordering_fields = '__all__'
     filter_fields = ('name', )
+
+class RegisterUserViewSet(viewsets.ModelViewSet):
+    '''
+    API endpoint for registering users
+    '''
+    is_private = True
+    serializer_class = RegisterUserSerializer
+    permission_classes = (CanRegisterUserViaAPI,)
+
+    def get_queryset(self):
+        '''
+        list users created by user
+        '''
+        return User.objects.filter(restapiusers__registered_by=self.request.user)
+
+    def get_serializer_context(self):
+        '''
+        pass request object to serializer context
+        '''
+        context = super(RegisterUserViewSet, self).get_serializer_context()
+        context['request'] = self.request
+        return context
