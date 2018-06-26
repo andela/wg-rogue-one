@@ -27,7 +27,7 @@
 body {
   overflow-x: hidden;
   /*font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  font-family: font-family: "Open Sans Light", Arial, Helvetica, sans-serif;
+  font-family: "Open Sans Light", Arial, Helvetica, sans-serif;
 }
 .text-muted {
   color: #777777;
@@ -282,6 +282,64 @@ header .intro-text .intro-heading {
   font-size: 50px;
   line-height: 50px;
   margin-bottom: 25px;
+}
+.parallax{
+  height: 700px;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+
+.p-1{
+  background-image: url("../images/gym_10.jpg");
+}
+.p-2{
+  background-image: url("../images/gym_2.jpg");
+}
+.p-3{
+  position: relative;
+}
+#background {
+	background: url(../images/background.png) repeat 5% 5%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+}
+
+#midground {
+	background: url(../images/midground.png) repeat 20% 20%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 200;
+}
+
+#foreground {
+	background: url(../images/foreground.png) repeat 90% 110%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 300;
+}
+.parallax-inner{
+  background: #0000004a;
+  height: 100%
+}
+.light{
+  color: #fff;
+}
+.dark{
+  color: #000;
+}
+.intro h1{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 75px;
+  margin-bottom: 50px;
+  padding-top: 100px;
+}
+.intro-img{
+  padding-top: 150px;
+}
+.intro-body p{
+  font-size: 16px;
 }
 @media (min-width: 768px) {
   header .intro-text {
