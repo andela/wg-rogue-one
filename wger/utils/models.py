@@ -48,6 +48,18 @@ class AbstractLicenseModel(models.Model):
     '''The author if it is not the uploader'''
 
 
+class AbstractExerciseLicenseModel(models.Model):
+    '''
+    Abstract class that adds license information to a model
+    '''
+
+    class Meta:
+        abstract = True
+
+    license = models.ForeignKey(License, verbose_name=_('License'), default=2)
+    ''' The item's license '''
+
+
 class AbstractSubmissionModel(models.Model):
     '''
     Abstract class used for model for user submitted data.

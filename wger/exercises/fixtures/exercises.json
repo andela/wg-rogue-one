@@ -2,7 +2,7 @@
     {
         "pk": 1,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -22,7 +22,7 @@
     {
         "pk": 3,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -42,7 +42,7 @@
     {
         "pk": 4,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -66,7 +66,7 @@
     {
         "pk": 5,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -89,7 +89,7 @@
     {
         "pk": 6,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -111,7 +111,7 @@
     {
         "pk": 7,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -135,7 +135,7 @@
     {
         "pk": 8,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -159,7 +159,7 @@
     {
         "pk": 9,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -184,7 +184,7 @@
     {
         "pk": 10,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -208,7 +208,7 @@
     {
         "pk": 11,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -234,7 +234,7 @@
     {
         "pk": 12,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -257,7 +257,7 @@
     {
         "pk": 13,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -279,7 +279,7 @@
     {
         "pk": 14,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -301,7 +301,7 @@
     {
         "pk": 15,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -327,7 +327,7 @@
     {
         "pk": 16,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -353,7 +353,7 @@
     {
         "pk": 17,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -379,7 +379,7 @@
     {
         "pk": 18,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -402,7 +402,7 @@
     {
         "pk": 19,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -425,7 +425,7 @@
     {
         "pk": 20,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -447,7 +447,7 @@
     {
         "pk": 21,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -467,7 +467,7 @@
     {
         "pk": 22,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -487,7 +487,7 @@
     {
         "pk": 23,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -509,7 +509,7 @@
     {
         "pk": 24,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -533,7 +533,7 @@
     {
         "pk": 25,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -555,7 +555,7 @@
     {
         "pk": 26,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -579,7 +579,7 @@
     {
         "pk": 27,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -599,7 +599,7 @@
     {
         "pk": 28,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -623,7 +623,7 @@
     {
         "pk": 29,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -646,7 +646,7 @@
     {
         "pk": 30,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -668,7 +668,7 @@
     {
         "pk": 31,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -690,7 +690,7 @@
     {
         "pk": 32,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -710,7 +710,7 @@
     {
         "pk": 33,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -730,7 +730,7 @@
     {
         "pk": 34,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -754,7 +754,7 @@
     {
         "pk": 35,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -776,7 +776,7 @@
     {
         "pk": 36,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -802,7 +802,7 @@
     {
         "pk": 37,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -825,7 +825,7 @@
     {
         "pk": 38,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -850,7 +850,7 @@
     {
         "pk": 39,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -870,7 +870,7 @@
     {
         "pk": 40,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -894,7 +894,7 @@
     {
         "pk": 41,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -920,7 +920,7 @@
     {
         "pk": 42,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -938,7 +938,7 @@
     {
         "pk": 44,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -962,7 +962,7 @@
     {
         "pk": 45,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -984,7 +984,7 @@
     {
         "pk": 46,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1008,7 +1008,7 @@
     {
         "pk": 47,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1033,7 +1033,7 @@
     {
         "pk": 48,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1057,7 +1057,7 @@
     {
         "pk": 49,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1077,7 +1077,7 @@
     {
         "pk": 50,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1100,7 +1100,7 @@
     {
         "pk": 51,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1120,7 +1120,7 @@
     {
         "pk": 52,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1140,7 +1140,7 @@
     {
         "pk": 53,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1162,7 +1162,7 @@
     {
         "pk": 54,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1184,7 +1184,7 @@
     {
         "pk": 55,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1207,7 +1207,7 @@
     {
         "pk": 56,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1229,7 +1229,7 @@
     {
         "pk": 57,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1249,7 +1249,7 @@
     {
         "pk": 58,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1271,7 +1271,7 @@
     {
         "pk": 59,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1296,7 +1296,7 @@
     {
         "pk": 60,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1314,7 +1314,7 @@
     {
         "pk": 61,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1337,7 +1337,7 @@
     {
         "pk": 62,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1362,7 +1362,7 @@
     {
         "pk": 63,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1382,7 +1382,7 @@
     {
         "pk": 65,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1402,7 +1402,7 @@
     {
         "pk": 66,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1422,7 +1422,7 @@
     {
         "pk": 67,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1444,7 +1444,7 @@
     {
         "pk": 68,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1466,7 +1466,7 @@
     {
         "pk": 69,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1486,7 +1486,7 @@
     {
         "pk": 70,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1511,7 +1511,7 @@
     {
         "pk": 71,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1533,7 +1533,7 @@
     {
         "pk": 72,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1553,7 +1553,7 @@
     {
         "pk": 73,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -1576,7 +1576,7 @@
     {
         "pk": 74,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -1600,7 +1600,7 @@
     {
         "pk": 76,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1624,7 +1624,7 @@
     {
         "pk": 77,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1650,7 +1650,7 @@
     {
         "pk": 79,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -1673,7 +1673,7 @@
     {
         "pk": 80,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -1697,7 +1697,7 @@
     {
         "pk": 81,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -1721,7 +1721,7 @@
     {
         "pk": 82,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -1744,7 +1744,7 @@
     {
         "pk": 83,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1766,7 +1766,7 @@
     {
         "pk": 84,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1789,7 +1789,7 @@
     {
         "pk": 85,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1812,7 +1812,7 @@
     {
         "pk": 86,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1834,7 +1834,7 @@
     {
         "pk": 87,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1854,7 +1854,7 @@
     {
         "pk": 88,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -1880,7 +1880,7 @@
     {
         "pk": 89,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1900,7 +1900,7 @@
     {
         "pk": 90,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1920,7 +1920,7 @@
     {
         "pk": 91,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -1945,7 +1945,7 @@
     {
         "pk": 92,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1965,7 +1965,7 @@
     {
         "pk": 93,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -1985,7 +1985,7 @@
     {
         "pk": 94,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2005,7 +2005,7 @@
     {
         "pk": 95,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2025,7 +2025,7 @@
     {
         "pk": 97,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2051,7 +2051,7 @@
     {
         "pk": 98,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2073,7 +2073,7 @@
     {
         "pk": 99,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2093,7 +2093,7 @@
     {
         "pk": 100,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2115,7 +2115,7 @@
     {
         "pk": 101,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2137,7 +2137,7 @@
     {
         "pk": 102,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2159,7 +2159,7 @@
     {
         "pk": 103,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2181,7 +2181,7 @@
     {
         "pk": 104,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2203,7 +2203,7 @@
     {
         "pk": 105,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2228,7 +2228,7 @@
     {
         "pk": 106,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2252,7 +2252,7 @@
     {
         "pk": 107,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2278,7 +2278,7 @@
     {
         "pk": 108,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2298,7 +2298,7 @@
     {
         "pk": 109,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2323,7 +2323,7 @@
     {
         "pk": 110,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2348,7 +2348,7 @@
     {
         "pk": 111,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2372,7 +2372,7 @@
     {
         "pk": 112,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2396,7 +2396,7 @@
     {
         "pk": 113,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2420,7 +2420,7 @@
     {
         "pk": 114,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2442,7 +2442,7 @@
     {
         "pk": 115,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2464,7 +2464,7 @@
     {
         "pk": 116,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2484,7 +2484,7 @@
     {
         "pk": 117,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2504,7 +2504,7 @@
     {
         "pk": 118,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2524,7 +2524,7 @@
     {
         "pk": 119,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2546,7 +2546,7 @@
     {
         "pk": 122,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2566,7 +2566,7 @@
     {
         "pk": 123,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2588,7 +2588,7 @@
     {
         "pk": 124,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2608,7 +2608,7 @@
     {
         "pk": 125,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2632,7 +2632,7 @@
     {
         "pk": 126,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2654,7 +2654,7 @@
     {
         "pk": 127,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2679,7 +2679,7 @@
     {
         "pk": 128,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2699,7 +2699,7 @@
     {
         "pk": 129,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2719,7 +2719,7 @@
     {
         "pk": 130,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2739,7 +2739,7 @@
     {
         "pk": 132,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -2759,7 +2759,7 @@
     {
         "pk": 133,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -2779,7 +2779,7 @@
     {
         "pk": 134,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -2801,7 +2801,7 @@
     {
         "pk": 135,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -2821,7 +2821,7 @@
     {
         "pk": 136,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -2844,7 +2844,7 @@
     {
         "pk": 137,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -2868,7 +2868,7 @@
     {
         "pk": 138,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2890,7 +2890,7 @@
     {
         "pk": 139,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2910,7 +2910,7 @@
     {
         "pk": 140,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2934,7 +2934,7 @@
     {
         "pk": 141,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2954,7 +2954,7 @@
     {
         "pk": 142,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -2974,7 +2974,7 @@
     {
         "pk": 143,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -2997,7 +2997,7 @@
     {
         "pk": 144,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3020,7 +3020,7 @@
     {
         "pk": 145,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3042,7 +3042,7 @@
     {
         "pk": 146,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3064,7 +3064,7 @@
     {
         "pk": 147,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3087,7 +3087,7 @@
     {
         "pk": 148,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3109,7 +3109,7 @@
     {
         "pk": 149,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3129,7 +3129,7 @@
     {
         "pk": 150,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3151,7 +3151,7 @@
     {
         "pk": 151,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3173,7 +3173,7 @@
     {
         "pk": 152,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3193,7 +3193,7 @@
     {
         "pk": 153,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -3216,7 +3216,7 @@
     {
         "pk": 154,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3236,7 +3236,7 @@
     {
         "pk": 155,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3256,7 +3256,7 @@
     {
         "pk": 157,
         "fields": {
-            "license_author": "Vl2V2sP42RNfDng1zCSZB7fZqlo",
+            "license_author": 24,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -3278,7 +3278,7 @@
     {
         "pk": 158,
         "fields": {
-            "license_author": "flori",
+            "license_author": 23,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -3300,7 +3300,7 @@
     {
         "pk": 159,
         "fields": {
-            "license_author": "WrmZ",
+            "license_author": 22,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -3322,7 +3322,7 @@
     {
         "pk": 160,
         "fields": {
-            "license_author": "minifigmaster125",
+            "license_author": 21,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3347,7 +3347,7 @@
     {
         "pk": 161,
         "fields": {
-            "license_author": "Mahoney",
+            "license_author": 20,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3369,7 +3369,7 @@
     {
         "pk": 162,
         "fields": {
-            "license_author": "Mahoney",
+            "license_author": 19,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3389,7 +3389,7 @@
     {
         "pk": 163,
         "fields": {
-            "license_author": "Mahoney",
+            "license_author": 18,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3414,7 +3414,7 @@
     {
         "pk": 164,
         "fields": {
-            "license_author": "Mahoney",
+            "license_author": 17,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3436,7 +3436,7 @@
     {
         "pk": 165,
         "fields": {
-            "license_author": "Mahoney",
+            "license_author": 16,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3458,7 +3458,7 @@
     {
         "pk": 166,
         "fields": {
-            "license_author": "robhoyt",
+            "license_author": 15,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3478,7 +3478,7 @@
     {
         "pk": 167,
         "fields": {
-            "license_author": "robhoyt",
+            "license_author": 14,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3498,7 +3498,7 @@
     {
         "pk": 168,
         "fields": {
-            "license_author": "kwrindy",
+            "license_author": 13,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3520,7 +3520,7 @@
     {
         "pk": 170,
         "fields": {
-            "license_author": "djblitzd",
+            "license_author": 12,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3540,7 +3540,7 @@
     {
         "pk": 172,
         "fields": {
-            "license_author": "flori",
+            "license_author": 11,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -3570,7 +3570,7 @@
     {
         "pk": 174,
         "fields": {
-            "license_author": "flori",
+            "license_author": 10,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -3593,7 +3593,7 @@
     {
         "pk": 176,
         "fields": {
-            "license_author": "kwrindy",
+            "license_author": 9,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3617,7 +3617,7 @@
     {
         "pk": 177,
         "fields": {
-            "license_author": "kwrindy",
+            "license_author": 8,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3637,7 +3637,7 @@
     {
         "pk": 179,
         "fields": {
-            "license_author": "oliser67",
+            "license_author": 7,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -3657,7 +3657,7 @@
     {
         "pk": 181,
         "fields": {
-            "license_author": "oliser67",
+            "license_author": 6,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3680,7 +3680,7 @@
     {
         "pk": 182,
         "fields": {
-            "license_author": "OGhTebfCxhexZXuf35mUxV9C--A",
+            "license_author": 5,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3700,7 +3700,7 @@
     {
         "pk": 185,
         "fields": {
-            "license_author": "OGhTebfCxhexZXuf35mUxV9C--A",
+            "license_author": 4,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3720,7 +3720,7 @@
     {
         "pk": 186,
         "fields": {
-            "license_author": "Horal_cz",
+            "license_author": 3,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -3742,7 +3742,7 @@
     {
         "pk": 187,
         "fields": {
-            "license_author": "drthurlow",
+            "license_author": 2,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3762,7 +3762,7 @@
     {
         "pk": 188,
         "fields": {
-            "license_author": "drthurlow",
+            "license_author": 33,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3782,7 +3782,7 @@
     {
         "pk": 189,
         "fields": {
-            "license_author": "sistab2",
+            "license_author": 62,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3804,7 +3804,7 @@
     {
         "pk": 190,
         "fields": {
-            "license_author": "sistab2",
+            "license_author": 38,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3826,7 +3826,7 @@
     {
         "pk": 191,
         "fields": {
-            "license_author": "sistab2",
+            "license_author": 73,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3850,7 +3850,7 @@
     {
         "pk": 192,
         "fields": {
-            "license_author": "sistab2",
+            "license_author": 69,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3875,7 +3875,7 @@
     {
         "pk": 193,
         "fields": {
-            "license_author": "cgoob883",
+            "license_author": 56,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3897,7 +3897,7 @@
     {
         "pk": 194,
         "fields": {
-            "license_author": "powerade69",
+            "license_author": 75,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3919,7 +3919,7 @@
     {
         "pk": 195,
         "fields": {
-            "license_author": "maxamillion1414",
+            "license_author": 23,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -3945,7 +3945,7 @@
     {
         "pk": 196,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -3965,7 +3965,7 @@
     {
         "pk": 197,
         "fields": {
-            "license_author": "ThisGirl0819",
+            "license_author": 11,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -3985,7 +3985,7 @@
     {
         "pk": 199,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4005,7 +4005,7 @@
     {
         "pk": 200,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -4027,7 +4027,7 @@
     {
         "pk": 201,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4047,7 +4047,7 @@
     {
         "pk": 202,
         "fields": {
-            "license_author": "Nallitnas",
+            "license_author": 49,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4073,7 +4073,7 @@
     {
         "pk": 203,
         "fields": {
-            "license_author": "Dexter",
+            "license_author": 48,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4102,7 +4102,7 @@
     {
         "pk": 204,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 47,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4122,7 +4122,7 @@
     {
         "pk": 205,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 47,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4144,7 +4144,7 @@
     {
         "pk": 206,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 46,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4167,7 +4167,7 @@
     {
         "pk": 207,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 45,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4187,7 +4187,7 @@
     {
         "pk": 208,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 43,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4209,7 +4209,7 @@
     {
         "pk": 209,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 42,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4233,7 +4233,7 @@
     {
         "pk": 210,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 41,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4256,7 +4256,7 @@
     {
         "pk": 211,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 40,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4276,7 +4276,7 @@
     {
         "pk": 212,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 38,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4298,7 +4298,7 @@
     {
         "pk": 213,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 37,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4318,7 +4318,7 @@
     {
         "pk": 214,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 36,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4338,7 +4338,7 @@
     {
         "pk": 215,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 35,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4360,7 +4360,7 @@
     {
         "pk": 216,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 34,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4382,7 +4382,7 @@
     {
         "pk": 217,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 33,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4407,7 +4407,7 @@
     {
         "pk": 218,
         "fields": {
-            "license_author": "tuckerm",
+            "license_author": 32,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4429,7 +4429,7 @@
     {
         "pk": 219,
         "fields": {
-            "license_author": "Cubeh",
+            "license_author": 31,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -4454,7 +4454,7 @@
     {
         "pk": 221,
         "fields": {
-            "license_author": "Marius",
+            "license_author": 30,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4475,7 +4475,7 @@
     {
         "pk": 222,
         "fields": {
-            "license_author": "hamihamann",
+            "license_author": 29,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -4499,7 +4499,7 @@
     {
         "pk": 223,
         "fields": {
-            "license_author": "Marius",
+            "license_author": 28,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4517,7 +4517,7 @@
     {
         "pk": 224,
         "fields": {
-            "license_author": "mhs_79",
+            "license_author": 27,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4537,7 +4537,7 @@
     {
         "pk": 225,
         "fields": {
-            "license_author": "mhs_79",
+            "license_author": 26,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4559,7 +4559,7 @@
     {
         "pk": 226,
         "fields": {
-            "license_author": "mhs_79",
+            "license_author": 27,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4579,7 +4579,7 @@
     {
         "pk": 227,
         "fields": {
-            "license_author": "trzr23",
+            "license_author": 26,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4599,7 +4599,7 @@
     {
         "pk": 228,
         "fields": {
-            "license_author": "bloody_disgrace",
+            "license_author": 25,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -4625,7 +4625,7 @@
     {
         "pk": 229,
         "fields": {
-            "license_author": "Wikipedia",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4650,7 +4650,7 @@
     {
         "pk": 230,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4672,7 +4672,7 @@
     {
         "pk": 231,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4692,7 +4692,7 @@
     {
         "pk": 232,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4715,7 +4715,7 @@
     {
         "pk": 233,
         "fields": {
-            "license_author": "Manu, wikipedia",
+            "license_author": 9,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -4741,7 +4741,7 @@
     {
         "pk": 235,
         "fields": {
-            "license_author": "\u0432\u0432\u0432",
+            "license_author": 8,
             "status": "2",
             "language": 5,
             "muscles_secondary": [],
@@ -4759,7 +4759,7 @@
     {
         "pk": 236,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 5,
             "muscles_secondary": [],
@@ -4779,7 +4779,7 @@
     {
         "pk": 237,
         "fields": {
-            "license_author": "YYCfit",
+            "license_author": 99,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4799,7 +4799,7 @@
     {
         "pk": 238,
         "fields": {
-            "license_author": "YYCfit",
+            "license_author": 88,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -4821,7 +4821,7 @@
     {
         "pk": 239,
         "fields": {
-            "license_author": "klabautermann",
+            "license_author": 66,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -4843,7 +4843,7 @@
     {
         "pk": 240,
         "fields": {
-            "license_author": "klabautermann",
+            "license_author": 55,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -4865,7 +4865,7 @@
     {
         "pk": 241,
         "fields": {
-            "license_author": "klabautermann",
+            "license_author": 45,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4885,7 +4885,7 @@
     {
         "pk": 242,
         "fields": {
-            "license_author": "Konsumopfer",
+            "license_author": 33,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4908,7 +4908,7 @@
     {
         "pk": 243,
         "fields": {
-            "license_author": "Konsumopfer",
+            "license_author": 22,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4926,7 +4926,7 @@
     {
         "pk": 244,
         "fields": {
-            "license_author": "Konsumopfer",
+            "license_author": 11,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -4948,7 +4948,7 @@
     {
         "pk": 245,
         "fields": {
-            "license_author": "Paul.Sichwardt",
+            "license_author": 22,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -4968,7 +4968,7 @@
     {
         "pk": 246,
         "fields": {
-            "license_author": "Topi88",
+            "license_author": 77,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -4986,7 +4986,7 @@
     {
         "pk": 247,
         "fields": {
-            "license_author": "Topi88",
+            "license_author": 39,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -5004,7 +5004,7 @@
     {
         "pk": 248,
         "fields": {
-            "license_author": "Topi88",
+            "license_author": 57,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -5022,7 +5022,7 @@
     {
         "pk": 249,
         "fields": {
-            "license_author": "J120290",
+            "license_author": 48,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5043,7 +5043,7 @@
     {
         "pk": 250,
         "fields": {
-            "license_author": "tanatos",
+            "license_author": 45,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5061,7 +5061,7 @@
     {
         "pk": 251,
         "fields": {
-            "license_author": "Susanne Bock",
+            "license_author": 47,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5079,7 +5079,7 @@
     {
         "pk": 252,
         "fields": {
-            "license_author": "LOOX",
+            "license_author": 26,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5097,7 +5097,7 @@
     {
         "pk": 254,
         "fields": {
-            "license_author": "aza11",
+            "license_author": 83,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -5118,7 +5118,7 @@
     {
         "pk": 255,
         "fields": {
-            "license_author": "novadani",
+            "license_author": 71,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5136,7 +5136,7 @@
     {
         "pk": 256,
         "fields": {
-            "license_author": "mbozi1",
+            "license_author": 78,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5156,7 +5156,7 @@
     {
         "pk": 258,
         "fields": {
-            "license_author": "http://www.carinatum.com/",
+            "license_author": 64,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5178,7 +5178,7 @@
     {
         "pk": 259,
         "fields": {
-            "license_author": "andikeller",
+            "license_author": 63,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -5202,7 +5202,7 @@
     {
         "pk": 260,
         "fields": {
-            "license_author": "aszc",
+            "license_author": 61,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5227,7 +5227,7 @@
     {
         "pk": 261,
         "fields": {
-            "license_author": "dewian000",
+            "license_author": 47,
             "status": "2",
             "language": 5,
             "muscles_secondary": [],
@@ -5250,7 +5250,7 @@
     {
         "pk": 262,
         "fields": {
-            "license_author": "MaddieBeasley",
+            "license_author": 28,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -5268,7 +5268,7 @@
     {
         "pk": 263,
         "fields": {
-            "license_author": "MaddieBeasley",
+            "license_author": 66,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5286,7 +5286,7 @@
     {
         "pk": 265,
         "fields": {
-            "license_author": "lauroernesto",
+            "license_author": 79,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5306,7 +5306,7 @@
     {
         "pk": 266,
         "fields": {
-            "license_author": "Konsumopfer",
+            "license_author": 80,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5324,7 +5324,7 @@
     {
         "pk": 267,
         "fields": {
-            "license_author": "Fergy",
+            "license_author": 35,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -5342,7 +5342,7 @@
     {
         "pk": 268,
         "fields": {
-            "license_author": "lakerbeezel",
+            "license_author": 8,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5364,7 +5364,7 @@
     {
         "pk": 269,
         "fields": {
-            "license_author": "foguinho.peruca",
+            "license_author": 7,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5382,7 +5382,7 @@
     {
         "pk": 270,
         "fields": {
-            "license_author": "Mens Fitness",
+            "license_author": 1,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5407,7 +5407,7 @@
     {
         "pk": 271,
         "fields": {
-            "license_author": "Mens Fitness",
+            "license_author": 2,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5429,7 +5429,7 @@
     {
         "pk": 272,
         "fields": {
-            "license_author": "colinp23",
+            "license_author": 98,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -5447,7 +5447,7 @@
     {
         "pk": 273,
         "fields": {
-            "license_author": "colinp23",
+            "license_author": 17,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -5465,7 +5465,7 @@
     {
         "pk": 274,
         "fields": {
-            "license_author": "tuninx",
+            "license_author": 32,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5490,7 +5490,7 @@
     {
         "pk": 275,
         "fields": {
-            "license_author": "http://www.exrx.net/WeightExercises/Brachialis/DBC",
+            "license_author": 45,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5514,7 +5514,7 @@
     {
         "pk": 276,
         "fields": {
-            "license_author": "Naatje",
+            "license_author": 44,
             "status": "2",
             "language": 6,
             "muscles_secondary": [
@@ -5538,7 +5538,7 @@
     {
         "pk": 278,
         "fields": {
-            "license_author": "GiglioRosso",
+            "license_author": 43,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5562,7 +5562,7 @@
     {
         "pk": 279,
         "fields": {
-            "license_author": "http://www.bodybuilding.com/",
+            "license_author": 42,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5584,7 +5584,7 @@
     {
         "pk": 280,
         "fields": {
-            "license_author": "Konsumopfer",
+            "license_author": 41,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5606,7 +5606,7 @@
     {
         "pk": 281,
         "fields": {
-            "license_author": "bizyguy",
+            "license_author": 40,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5624,7 +5624,7 @@
     {
         "pk": 282,
         "fields": {
-            "license_author": "Konsumopfer",
+            "license_author": 39,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5642,7 +5642,7 @@
     {
         "pk": 286,
         "fields": {
-            "license_author": "GrosseHund",
+            "license_author": 38,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -5668,7 +5668,7 @@
     {
         "pk": 287,
         "fields": {
-            "license_author": "GrosseHund",
+            "license_author": 37,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -5695,7 +5695,7 @@
     {
         "pk": 288,
         "fields": {
-            "license_author": "GrosseHund",
+            "license_author": 36,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -5721,7 +5721,7 @@
     {
         "pk": 289,
         "fields": {
-            "license_author": "GrosseHund",
+            "license_author": 35,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5746,7 +5746,7 @@
     {
         "pk": 290,
         "fields": {
-            "license_author": "GrosseHund",
+            "license_author": 34,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -5769,7 +5769,7 @@
     {
         "pk": 291,
         "fields": {
-            "license_author": "GrosseHund",
+            "license_author": 33,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5793,7 +5793,7 @@
     {
         "pk": 292,
         "fields": {
-            "license_author": "JonnFox",
+            "license_author": 32,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5815,7 +5815,7 @@
     {
         "pk": 293,
         "fields": {
-            "license_author": "intelman",
+            "license_author": 31,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5833,7 +5833,7 @@
     {
         "pk": 294,
         "fields": {
-            "license_author": "woern777",
+            "license_author": 30,
             "status": "1",
             "language": 1,
             "muscles_secondary": [],
@@ -5853,7 +5853,7 @@
     {
         "pk": 295,
         "fields": {
-            "license_author": "notdefine",
+            "license_author": 29,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -5877,7 +5877,7 @@
     {
         "pk": 296,
         "fields": {
-            "license_author": "McMarcel13",
+            "license_author": 28,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5901,7 +5901,7 @@
     {
         "pk": 297,
         "fields": {
-            "license_author": "McMarcel13",
+            "license_author": 27,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -5921,7 +5921,7 @@
     {
         "pk": 298,
         "fields": {
-            "license_author": "ExRx",
+            "license_author": 26,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -5945,7 +5945,7 @@
     {
         "pk": 299,
         "fields": {
-            "license_author": "ekgdc",
+            "license_author": 25,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -5965,7 +5965,7 @@
     {
         "pk": 300,
         "fields": {
-            "license_author": "ataraxie67",
+            "license_author": 46,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -5987,7 +5987,7 @@
     {
         "pk": 301,
         "fields": {
-            "license_author": "Firmeza ",
+            "license_author": 47,
             "status": "1",
             "language": 7,
             "muscles_secondary": [],
@@ -6007,7 +6007,7 @@
     {
         "pk": 302,
         "fields": {
-            "license_author": "nate303303",
+            "license_author": 49,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6030,7 +6030,7 @@
     {
         "pk": 303,
         "fields": {
-            "license_author": "nate303303",
+            "license_author": 50,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6051,7 +6051,7 @@
     {
         "pk": 304,
         "fields": {
-            "license_author": "nate303303",
+            "license_author": 51,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6078,7 +6078,7 @@
     {
         "pk": 305,
         "fields": {
-            "license_author": "nate303303",
+            "license_author": 52,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6099,7 +6099,7 @@
     {
         "pk": 306,
         "fields": {
-            "license_author": "nate303303",
+            "license_author": 53,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6122,7 +6122,7 @@
     {
         "pk": 307,
         "fields": {
-            "license_author": "nate303303",
+            "license_author": 54,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6156,7 +6156,7 @@
     {
         "pk": 308,
         "fields": {
-            "license_author": "nate303303",
+            "license_author": 55,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6177,7 +6177,7 @@
     {
         "pk": 310,
         "fields": {
-            "license_author": "Robertcoop",
+            "license_author": 56,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6199,7 +6199,7 @@
     {
         "pk": 311,
         "fields": {
-            "license_author": "koreyhinton",
+            "license_author": 57,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6224,7 +6224,7 @@
     {
         "pk": 312,
         "fields": {
-            "license_author": "Trix",
+            "license_author": 58,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6244,7 +6244,7 @@
     {
         "pk": 314,
         "fields": {
-            "license_author": "schmiddytimes",
+            "license_author": 59,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -6262,7 +6262,7 @@
     {
         "pk": 315,
         "fields": {
-            "license_author": "schmiddytimes",
+            "license_author": 95,
             "status": "2",
             "language": 1,
             "muscles_secondary": [],
@@ -6280,7 +6280,7 @@
     {
         "pk": 316,
         "fields": {
-            "license_author": "vince63",
+            "license_author": 85,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6298,7 +6298,7 @@
     {
         "pk": 317,
         "fields": {
-            "license_author": "vince63",
+            "license_author": 75,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6316,7 +6316,7 @@
     {
         "pk": 318,
         "fields": {
-            "license_author": "dookie1481",
+            "license_author": 65,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6346,7 +6346,7 @@
     {
         "pk": 319,
         "fields": {
-            "license_author": "tobahl",
+            "license_author": 55,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6366,7 +6366,7 @@
     {
         "pk": 320,
         "fields": {
-            "license_author": "jigglychipmunk",
+            "license_author": 45,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6386,7 +6386,7 @@
     {
         "pk": 321,
         "fields": {
-            "license_author": "jigglychipmunk",
+            "license_author": 35,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6404,7 +6404,7 @@
     {
         "pk": 323,
         "fields": {
-            "license_author": "http://www.bodybuilding.com/exercises/detail/view/",
+            "license_author": 97,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6427,7 +6427,7 @@
     {
         "pk": 324,
         "fields": {
-            "license_author": "http://workouttrends.com/how-to-do-dumbbell-side-b",
+            "license_author": 96,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6447,7 +6447,7 @@
     {
         "pk": 325,
         "fields": {
-            "license_author": "http://www.bodybuilding.com/",
+            "license_author": 95,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6471,7 +6471,7 @@
     {
         "pk": 326,
         "fields": {
-            "license_author": "http://www.realsimple.com/health/fitness-exercise/",
+            "license_author": 94,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6495,7 +6495,7 @@
     {
         "pk": 328,
         "fields": {
-            "license_author": "MrSteele",
+            "license_author": 93,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6513,7 +6513,7 @@
     {
         "pk": 329,
         "fields": {
-            "license_author": "oboema",
+            "license_author": 89,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6533,7 +6533,7 @@
     {
         "pk": 330,
         "fields": {
-            "license_author": "baldurmen",
+            "license_author": 88,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6556,7 +6556,7 @@
     {
         "pk": 337,
         "fields": {
-            "license_author": "kclark",
+            "license_author": 87,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6574,7 +6574,7 @@
     {
         "pk": 338,
         "fields": {
-            "license_author": "cal.zabel",
+            "license_author": 86,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6598,7 +6598,7 @@
     {
         "pk": 339,
         "fields": {
-            "license_author": "cal.zabel",
+            "license_author": 87,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6618,7 +6618,7 @@
     {
         "pk": 340,
         "fields": {
-            "license_author": "cal.zabel",
+            "license_author": 85,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6641,7 +6641,7 @@
     {
         "pk": 341,
         "fields": {
-            "license_author": "cal.zabel",
+            "license_author": 84,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6663,7 +6663,7 @@
     {
         "pk": 342,
         "fields": {
-            "license_author": "sevae",
+            "license_author": 83,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6685,7 +6685,7 @@
     {
         "pk": 343,
         "fields": {
-            "license_author": "sevae",
+            "license_author": 82,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6711,7 +6711,7 @@
     {
         "pk": 344,
         "fields": {
-            "license_author": "sevae",
+            "license_author": 81,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -6736,7 +6736,7 @@
     {
         "pk": 345,
         "fields": {
-            "license_author": "deusinvictus",
+            "license_author": 79,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6756,7 +6756,7 @@
     {
         "pk": 346,
         "fields": {
-            "license_author": "OM6oxA3bCOvamJntbRi5S0RCDrQ",
+            "license_author": 78,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6774,7 +6774,7 @@
     {
         "pk": 347,
         "fields": {
-            "license_author": "2dPREtEZP221u68Akf0JImv5L48",
+            "license_author": 77,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6792,7 +6792,7 @@
     {
         "pk": 348,
         "fields": {
-            "license_author": "Sench0",
+            "license_author": 76,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6810,7 +6810,7 @@
     {
         "pk": 349,
         "fields": {
-            "license_author": "Clegg89",
+            "license_author": 75,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6832,7 +6832,7 @@
     {
         "pk": 350,
         "fields": {
-            "license_author": "Magenta",
+            "license_author": 73,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6850,7 +6850,7 @@
     {
         "pk": 351,
         "fields": {
-            "license_author": "pjwirth",
+            "license_author": 74,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6870,7 +6870,7 @@
     {
         "pk": 352,
         "fields": {
-            "license_author": "Tetsuhiko Asai",
+            "license_author": 69,
             "status": "3",
             "language": 7,
             "muscles_secondary": [
@@ -6892,7 +6892,7 @@
     {
         "pk": 353,
         "fields": {
-            "license_author": "Tetsuhiko Asai",
+            "license_author": 68,
             "status": "2",
             "language": 7,
             "muscles_secondary": [
@@ -6914,7 +6914,7 @@
     {
         "pk": 354,
         "fields": {
-            "license_author": "er0355",
+            "license_author": 67,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6932,7 +6932,7 @@
     {
         "pk": 355,
         "fields": {
-            "license_author": "geraldbaeck",
+            "license_author": 65,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -6950,7 +6950,7 @@
     {
         "pk": 357,
         "fields": {
-            "license_author": "miguelaprovencio",
+            "license_author": 64,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -6968,7 +6968,7 @@
     {
         "pk": 358,
         "fields": {
-            "license_author": "silke",
+            "license_author": 60,
             "status": "2",
             "language": 1,
             "muscles_secondary": [
@@ -6993,7 +6993,7 @@
     {
         "pk": 359,
         "fields": {
-            "license_author": "Nash",
+            "license_author": 63,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -7013,7 +7013,7 @@
     {
         "pk": 360,
         "fields": {
-            "license_author": "Nash",
+            "license_author": 62,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -7033,7 +7033,7 @@
     {
         "pk": 361,
         "fields": {
-            "license_author": "Nash",
+            "license_author": 61,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -7057,7 +7057,7 @@
     {
         "pk": 362,
         "fields": {
-            "license_author": "sebk",
+            "license_author": 60,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -7083,7 +7083,7 @@
     {
         "pk": 363,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 59,
             "status": "2",
             "language": 9,
             "muscles_secondary": [
@@ -7108,7 +7108,7 @@
     {
         "pk": 364,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 58,
             "status": "2",
             "language": 9,
             "muscles_secondary": [
@@ -7132,7 +7132,7 @@
     {
         "pk": 365,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 57,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7152,7 +7152,7 @@
     {
         "pk": 366,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 56,
             "status": "2",
             "language": 9,
             "muscles_secondary": [
@@ -7176,7 +7176,7 @@
     {
         "pk": 367,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 55,
             "status": "2",
             "language": 9,
             "muscles_secondary": [
@@ -7200,7 +7200,7 @@
     {
         "pk": 368,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 54,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7222,7 +7222,7 @@
     {
         "pk": 369,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 53,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7244,7 +7244,7 @@
     {
         "pk": 370,
         "fields": {
-            "license_author": "perteus",
+            "license_author": 100,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7264,7 +7264,7 @@
     {
         "pk": 371,
         "fields": {
-            "license_author": "http://kulturistika.ronnie.cz/c-17541-zasobnik-cvi",
+            "license_author": 112,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7286,7 +7286,7 @@
     {
         "pk": 372,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7306,7 +7306,7 @@
     {
         "pk": 373,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7326,7 +7326,7 @@
     {
         "pk": 374,
         "fields": {
-            "license_author": "wger.de",
+            "license_author": 60,
             "status": "2",
             "language": 9,
             "muscles_secondary": [],
@@ -7346,7 +7346,7 @@
     {
         "pk": 375,
         "fields": {
-            "license_author": "chris",
+            "license_author": 4,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -7364,7 +7364,7 @@
     {
         "pk": 376,
         "fields": {
-            "license_author": "James Mackay",
+            "license_author": 5,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -7392,7 +7392,7 @@
     {
         "pk": 377,
         "fields": {
-            "license_author": "Araaosf",
+            "license_author": 6,
             "status": "2",
             "language": 7,
             "muscles_secondary": [],
@@ -7410,7 +7410,7 @@
     {
         "pk": 378,
         "fields": {
-            "license_author": "http://www.wikifit.de",
+            "license_author": 10,
             "status": "1",
             "language": 1,
             "muscles_secondary": [],
@@ -7430,7 +7430,7 @@
     {
         "pk": 379,
         "fields": {
-            "license_author": "Chippo",
+            "license_author": 11,
             "status": "1",
             "language": 2,
             "muscles_secondary": [],
@@ -7448,7 +7448,7 @@
     {
         "pk": 380,
         "fields": {
-            "license_author": "Photo of machine user information",
+            "license_author": 22,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -7470,7 +7470,7 @@
     {
         "pk": 381,
         "fields": {
-            "license_author": "bobbyprince89",
+            "license_author": 56,
             "status": "2",
             "language": 2,
             "muscles_secondary": [
@@ -7496,7 +7496,7 @@
     {
         "pk": 382,
         "fields": {
-            "license_author": "pwiltrout",
+            "license_author": 29,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -7514,7 +7514,7 @@
     {
         "pk": 383,
         "fields": {
-            "license_author": "Behrooz",
+            "license_author": 36,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -7538,7 +7538,7 @@
     {
         "pk": 385,
         "fields": {
-            "license_author": "techbearable",
+            "license_author": 37,
             "status": "1",
             "language": 2,
             "muscles_secondary": [
@@ -7561,7 +7561,7 @@
     {
         "pk": 386,
         "fields": {
-            "license_author": "richmr2174@gmail.com",
+            "license_author": 28,
             "status": "2",
             "language": 2,
             "muscles_secondary": [],
@@ -7586,7 +7586,7 @@
         "pk": 387,
         "fields": {
             "license": 2,
-            "license_author": "Sean Nalewanyj",
+            "license_author": 90,
             "status": "2",
             "category": 13,
             "description": "<p>These are basically a horizontal row, but instead of pulling to the chest or waist like you would on most back exercises, the resistance is pulled toward the face.</p>",
@@ -7609,7 +7609,7 @@
         "pk": 388,
         "fields": {
             "license": 2,
-            "license_author": "Sean Nalewanyj",
+            "license_author": 48,
             "status": "2",
             "category": 13,
             "description": "<p>Rear delt dumbbell row\u00a0training works well when included as part of a complete shoulder workout, or it can be performed at the end of a back workout.</p>",
@@ -7632,7 +7632,7 @@
         "pk": 389,
         "fields": {
             "license": 2,
-            "license_author": "Sean Nalewanyj",
+            "license_author": 75,
             "status": "2",
             "category": 13,
             "description": "<p>This is a direct isolation exercise that will train the rear delts effectively with minimal involvement from other muscle groups.</p>",
@@ -7655,7 +7655,7 @@
         "pk": 390,
         "fields": {
             "license": 2,
-            "license_author": "Sean Nalewanyj",
+            "license_author": 63,
             "status": "2",
             "category": 13,
             "description": "<p>Rear military presses, in particular, create a large amount of stress on the shoulder joint.\u00a0Using a backrest will help to prevent injury by providing lower back support and reducing improper arching of the back.</p>",
@@ -7678,7 +7678,7 @@
         "pk": 391,
         "fields": {
             "license": 2,
-            "license_author": "Alex Savva",
+            "license_author": 30,
             "status": "2",
             "category": 13,
             "description": "\u00a0\n\n<p style=\"\">Sitting is overrated. While it might cause you to have a lower one-rep max, a standing dumbbell press better stimulates shoulder growth than a seated press.</p>\n",
@@ -7701,7 +7701,7 @@
         "pk": 392,
         "fields": {
             "license": 2,
-            "license_author": "Alex Savva",
+            "license_author": 27,
             "status": "2",
             "category": 13,
             "description": "<p>This triset targets the rear delts while hitting the medial and front heads as well. It's a great variation to throw into the end of your routine.</p>",
@@ -7724,7 +7724,7 @@
         "pk": 393,
         "fields": {
             "license": 2,
-            "license_author": "Alex Savva",
+            "license_author": 24,
             "status": "2",
             "category": 13,
             "description": "<p>Take your standard dumbbell lateral raises to a new level. Using kettlebells will add an extra challenge for your forearms and shoulder stabilizers.</p>",
@@ -7747,7 +7747,7 @@
         "pk": 394,
         "fields": {
             "license": 2,
-            "license_author": "Alex Savva",
+            "license_author": 23,
             "status": "2",
             "category": 13,
             "description": "<p>Neutral-Grip Sternum Chin-Up\u00a0does\u00a0not only hit your lats and rear delts harder than a traditional chin-up, it also blasts your core.</p>",
@@ -7770,7 +7770,7 @@
         "pk": 395,
         "fields": {
             "license": 2,
-            "license_author": "Rachael Schultz",
+            "license_author": 10,
             "status": "2",
             "category": 8,
             "description": "<p>This simple motion helps target and strengthen your wrist flexors, which are crucial in building grip strength.</p>",
@@ -7793,7 +7793,7 @@
         "pk": 396,
         "fields": {
             "license": 2,
-            "license_author": "Rachael Schultz",
+            "license_author": 11,
             "status": "2",
             "category": 8,
             "description": "<p>The inverse of the wrist flexion move, this extension exercise helps add size and strength to your wrist extensor muscles.</p>",
@@ -7816,7 +7816,7 @@
         "pk": 397,
         "fields": {
             "license": 2,
-            "license_author": "Rachael Schultz",
+            "license_author": 14,
             "status": "2",
             "category": 8,
             "description": "<p>Here, you\u2019ll work two crucial forearm muscles, \u00a0and\u00a0<em style=\"\">pronator teres</em>, as well as the\u00a0<em style=\"\">brachialis</em>, an assisting muscle that will help build elbow flexion.</p>",
@@ -7839,7 +7839,7 @@
         "pk": 398,
         "fields": {
             "license": 2,
-            "license_author": "Rachael Schultz",
+            "license_author": 13,
             "status": "2",
             "category": 8,
             "description": "<p>This move builds the wrist and finger flexors, as well as engaging just about every other muscle in your body.\u00a0</p>",
@@ -7862,7 +7862,7 @@
         "pk": 399,
         "fields": {
             "license": 2,
-            "license_author": "JODY BRAVERMAN",
+            "license_author": 12,
             "status": "2",
             "category": 12,
             "description": "<p>A compound exercise that works all the major muscle groups of the body, deadlifts target the upper erector spinae muscles.\u00a0</p>",
@@ -7885,7 +7885,7 @@
         "pk": 400,
         "fields": {
             "license": 2,
-            "license_author": "JODY BRAVERMAN",
+            "license_author": 101,
             "status": "2",
             "category": 12,
             "description": "<p>Back extensions can be performed in a number of ways with a variety of equipment. They can be done with or without weight.</p>",
@@ -7908,7 +7908,7 @@
         "pk": 401,
         "fields": {
             "license": 2,
-            "license_author": "JODY BRAVERMAN",
+            "license_author": 101,
             "status": "2",
             "category": 12,
             "description": "<p>The Superman exercise requires no equipment and works the entire spine. Use a slow and controlled motion, and focus on using the erector spinae to power the movement.</p>",
@@ -7931,7 +7931,7 @@
         "pk": 402,
         "fields": {
             "license": 2,
-            "license_author": "JODY BRAVERMAN",
+            "license_author": 101,
             "status": "2",
             "category": 12,
             "description": "<p>This stretch, performed properly, is as much an erector spinae stretch as it is a hamstring stretch.</p>",
