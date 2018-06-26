@@ -53,10 +53,10 @@ class Workout(models.Model):
     Model for a training schedule
     '''
     CYCLE_OPTIONS = [
-            ('Microcycle', 'Microcycle - one week plan'),
-            ('Mesocycle', 'Mesocycle - Two to six weeks plan'),
-            ('Macrocycle', 'Macrocycle - one year plan')
-        ]
+        ('Microcycle', 'Microcycle - one week plan'),
+        ('Mesocycle', 'Mesocycle - Two to six weeks plan'),
+        ('Macrocycle', 'Macrocycle - one year plan')
+    ]
 
     class Meta:
         '''

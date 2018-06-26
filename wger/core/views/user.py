@@ -443,6 +443,7 @@ def fitbit(request):
     login_url = fitbit.get_authorization_uri()
     return redirect(login_url)
 
+
 @login_required
 def fetch_weight_data(request, code):
     '''
@@ -452,7 +453,7 @@ def fetch_weight_data(request, code):
     fitbit_weight_list = []
     # get token if passed code passes code challenge
     token = fitbit.get_access_token(code)
-    
+
     # storing the token in the session
     request.session['token'] = token
 
@@ -462,19 +463,20 @@ def fetch_weight_data(request, code):
             for log in data['body-weight']:
                 old_format = log['dateTime']
                 year, month, day = old_format.split('-')
-                old_date = datetime.datetime(int(year),int(month),int(day))
+                old_date = datetime.datetime(int(year), int(month), int(day))
                 date1 = datetime.datetime.strptime(old_format, "%Y-%m-%d")
-                new_date = datetime.datetime.strftime(date1,"%B %d, %Y")
+                new_date = datetime.datetime.strftime(date1, "%B %d, %Y")
 
                 fitbit_weight = {
-                    'weight' : log['value'],
-                    'date' : new_date
-                    }
+                    'weight': log['value'],
+                    'date': new_date
+                }
                 fitbit_weight_list.append(fitbit_weight)
         return fitbit_weight_list
 
     except Exception as e:
         return e
+
 
 @login_required
 def fetch_exercise_data(request, token):
@@ -489,16 +491,16 @@ def fetch_exercise_data(request, token):
         for log in data['activities']:
             # change duration from milliseconds back to hours
             millisec_format = log['duration']
-            hr_format =  round(float(millisec_format)*(1/3600000), 2)
+            hr_format = round(float(millisec_format) * (1 / 3600000), 2)
             fitbit_exercise = {
-                'name' : log['activityParentName'],
-                'description' : log['description'],
-                'duration' : hr_format
+                'name': log['activityParentName'],
+                'description': log['description'],
+                'duration': hr_format
             }
             fitbit_exercises.append(fitbit_exercise)
 
     return fitbit_exercises
-    
+
 
 class UserDeactivateView(LoginRequiredMixin,
                          WgerMultiplePermissionRequiredMixin,

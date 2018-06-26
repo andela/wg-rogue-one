@@ -151,6 +151,7 @@ def view(request, id, slug=None):
 
     return render(request, 'exercise/view.html', template_data)
 
+
 def fitbit_overview(request):
     '''
     Shows exercise data
@@ -165,12 +166,12 @@ def fitbit_overview(request):
     except:
         # token doesnt exist
         return HttpResponseRedirect(reverse('weight:overview',
-                                kwargs={'username': request.user.username}))
-  
-    
+                                            kwargs={'username': request.user.username}))
+
     template_data['is_owner'] = is_owner
     template_data['fitbit_exercise_data'] = data
     return render(request, 'exercise/fitbit_overview.html', template_data)
+
 
 class ExercisesEditAddView(WgerFormMixin):
     '''
