@@ -200,7 +200,7 @@ def process_log_entries(logs):
     return entry_log, json.dumps(chart_data, cls=DecimalJsonEncoder)
 
 
-def get_last_entries(user,amount=5):
+def get_last_entries(user, amount=5):
     '''
     Get the last weight entries as well as the difference to the last
 
@@ -227,4 +227,3 @@ def get_last_entries(user,amount=5):
         last_entries_details.append((curr_entry, weight_diff, day_diff))
 
     return last_entries_details
-

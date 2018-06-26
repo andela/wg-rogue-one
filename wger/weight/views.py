@@ -44,11 +44,12 @@ from wger.utils.helpers import check_access, compare_access
 from wger.utils.generic_views import WgerFormMixin
 from wger.core.views.fitbit import Fitbit
 from wger.core.views.user import fetch_weight_data
-import datetime 
+import datetime
 
 logger = logging.getLogger(__name__)
 fitbit_weight = []
 fitbit_weight_data = []
+
 
 class WeightAddView(WgerFormMixin, CreateView):
     '''
@@ -162,13 +163,13 @@ def overview(request, username=None):
             fitbit_weight.extend(weight_data)
     last_weight_entries = helpers.get_last_entries(user)
 
-
     template_data['is_owner'] = is_owner
     template_data['owner_user'] = user
     template_data['show_shariff'] = is_owner
     template_data['last_five_weight_entries_details'] = last_weight_entries
     template_data['fitbit_weight'] = fitbit_weight
     return render(request, 'overview.html', template_data)
+
 
 def fitbit_overview(request, username=None):
     '''
@@ -183,6 +184,7 @@ def fitbit_overview(request, username=None):
     template_data['show_shariff'] = is_owner
     template_data['fitbit_weight'] = fitbit_weight
     return render(request, 'fitbit_overview.html', template_data)
+
 
 @api_view(['GET'])
 def get_weight_data(request, username=None):
@@ -204,11 +206,11 @@ def get_weight_data(request, username=None):
     fitbit_obj = {}
     for log in fitbit_weight:
         old_date = log['date']
-        date1 = datetime.datetime.strptime(old_date,"%B %d, %Y")
+        date1 = datetime.datetime.strptime(old_date, "%B %d, %Y")
         new_date = datetime.datetime.strftime(date1, "%Y-%m-%d")
-        fitbit_obj={
-            'date':new_date,
-            'weight':log['weight']
+        fitbit_obj = {
+            'date': new_date,
+            'weight': log['weight']
         }
         fitbit_weight_data.append(fitbit_obj)
 

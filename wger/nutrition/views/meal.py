@@ -65,12 +65,12 @@ class MealEditView(WgerFormMixin, UpdateView):
     '''
     Generic view to update an existing meal
     '''
-    
+
     model = Meal
     fields = '__all__'
     title = ugettext_lazy('Edit meal')
     form_action_urlname = 'nutrition:meal:edit'
-    
+
     def get_success_url(self):
         return self.object.plan.get_absolute_url()
 

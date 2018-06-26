@@ -609,9 +609,9 @@ class MealItem(models.Model):
                           blank=True,
                           verbose_name=_('Time (approx)'))
     meal_category = models.CharField(verbose_name=_('Meal categories'),
-                                       choices=MEAL_CATEGORIES,
-                                       default=NEW_MEAL,
-                                       max_length=20)
+                                     choices=MEAL_CATEGORIES,
+                                     default=NEW_MEAL,
+                                     max_length=20)
 
     def __str__(self):
         '''
