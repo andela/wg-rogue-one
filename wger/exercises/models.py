@@ -37,7 +37,7 @@ from django.conf import settings
 from wger.core.models import Language
 from wger.utils.helpers import smart_capitalize
 from wger.utils.managers import SubmissionManager
-from wger.utils.models import AbstractLicenseModel, AbstractSubmissionModel
+from wger.utils.models import AbstractLicenseModel, AbstractSubmissionModel, AbstractExerciseLicenseModel
 from wger.utils.cache import (
     delete_template_fragment_cache,
     reset_workout_canonical_form,
@@ -46,6 +46,21 @@ from wger.utils.cache import (
 
 
 logger = logging.getLogger(__name__)
+
+
+@python_2_unicode_compatible
+class Author(models.Model):
+
+    license_author = models.CharField(verbose_name=_('Author'),
+                                      max_length=100,
+                                      blank=True,
+                                      null=True,
+                                      help_text=_('If you are not the author, enter the name or '
+                                                  'source here. This is needed for some licenses '
+                                                  'e.g. the CC-BY-SA.'))
+
+    def __str__(self):
+        return self.license_author
 
 
 @python_2_unicode_compatible
@@ -155,7 +170,7 @@ class ExerciseCategory(models.Model):
 
 
 @python_2_unicode_compatible
-class Exercise(AbstractSubmissionModel, AbstractLicenseModel, models.Model):
+class Exercise(AbstractSubmissionModel, AbstractExerciseLicenseModel, models.Model):
     '''
     Model for an exercise
     '''
@@ -165,6 +180,9 @@ class Exercise(AbstractSubmissionModel, AbstractLicenseModel, models.Model):
 
     category = models.ForeignKey(ExerciseCategory,
                                  verbose_name=_('Category'))
+    license_author = models.ForeignKey(Author, on_delete=models.CASCADE, default=60, help_text=_(
+        'If you are not the author, enter the name or source here. This is needed for some licenses e.g. the CC-BY-SA.'))
+
     description = models.TextField(max_length=2000,
                                    verbose_name=_('Description'),
                                    validators=[MinLengthValidator(40)])
@@ -332,9 +350,13 @@ class Exercise(AbstractSubmissionModel, AbstractLicenseModel, models.Model):
             self.status = self.STATUS_ACCEPTED
             if not self.license_author:
                 self.license_author = request.get_host().split(':')[0]
+                author = Author(author=self.license_author)
+                author.save()
         else:
             if not self.license_author:
                 self.license_author = request.user.username
+                author = Author(author=self.license_author)
+                author.save()
 
             subject = _('New user submitted exercise')
             message = _(u'The user {0} submitted a new exercise "{1}".').format(
@@ -351,13 +373,15 @@ def exercise_image_upload_dir(instance, filename):
     return "exercise-images/{0}/{1}".format(instance.exercise.id, filename)
 
 
-class ExerciseImage(AbstractSubmissionModel, AbstractLicenseModel, models.Model):
+class ExerciseImage(AbstractSubmissionModel, AbstractExerciseLicenseModel, models.Model):
     '''
     Model for an exercise image
     '''
 
     objects = SubmissionManager()
     '''Custom manager'''
+
+    license_author = models.ForeignKey(Author, on_delete=models.CASCADE, default=60)
 
     exercise = models.ForeignKey(Exercise,
                                  verbose_name=_('Exercise'))

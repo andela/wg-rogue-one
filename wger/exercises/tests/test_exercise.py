@@ -238,6 +238,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
                                     {'category': 2,
                                      'name_original': 'my test exercise',
                                      'license': 1,
+                                     'license_author': 1,
                                      'muscles': [1, 2]})
         count_after = Exercise.objects.count()
         self.assertIn(response.status_code, STATUS_CODES_FAIL)
@@ -274,6 +275,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
                                     {'category': 2,
                                      'name_original': 'my test exercise',
                                      'license': 1,
+                                     'license_author': 1,
                                      'description': description,
                                      'muscles': [1, 2]})
         count_after = Exercise.objects.count()
@@ -287,10 +289,10 @@ class ExercisesTestCase(WorkoutManagerTestCase):
         # Exercise was saved
         exercise = Exercise.objects.get(pk=exercise_id)
         if admin:
-            self.assertEqual(exercise.license_author, 'testserver')
+            self.assertEqual(exercise.license_author.license_author, 'Peter')
             self.assertEqual(exercise.status, Exercise.STATUS_ACCEPTED)
         else:
-            self.assertEqual(exercise.license_author, 'test')
+            self.assertEqual(exercise.license_author.license_author, 'Peter')
             self.assertEqual(exercise.status, Exercise.STATUS_PENDING)
 
         response = self.client.get(reverse('exercise:exercise:view', kwargs={'id': exercise_id}))
@@ -307,6 +309,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
                                     {'category': 111,
                                      'name_original': 'my test exercise',
                                      'license': 1,
+                                     'license_author': 1,
                                      'muscles': [1, 2]})
         self.assertTrue(response.context['form'].errors['category'])
 
@@ -315,6 +318,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
                                     {'category': 111,
                                      'name_original': 'my test exercise',
                                      'license': 1,
+                                     'license_author': 1,
                                      'muscles': [1, 2]})
         if admin:
             self.assertTrue(response.context['form'].errors['category'])
@@ -326,6 +330,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
                                     {'category': 1,
                                      'name_original': 'my test exercise',
                                      'license': 1,
+                                     'license_author': 1,
                                      'muscles': []})
         self.assertFalse(response.context['form'].errors.get('muscles'))
 
@@ -334,6 +339,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
                                     {'category': 1,
                                      'name_original': 'my test exercise',
                                      'license': 1,
+                                     'license_author': 1,
                                      'muscles': []})
         if admin:
             self.assertFalse(response.context['form'].errors.get('muscles'))
@@ -542,7 +548,7 @@ class ExerciseApiTest(WorkoutManagerTestCase):
         '''
         data = {
             "id": 1,
-            "license_author": "subkayine",
+            "license_author": 1,
             "status": "2",
             "description": "<p>Lorem ipsum</p>",
             "name": "Military",

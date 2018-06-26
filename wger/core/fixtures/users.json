@@ -1,6 +1,6 @@
 [
     {
-        "pk": 1,    
+        "pk": 1,
         "model": "auth.user",
         "fields": {
             "username": "admin",
@@ -29,17 +29,17 @@
             ],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$JHJGtYzk49FZ$n3oT+lcfGB3al1I8spSwo6JlJqu4rXwHHsPmeJup/z8=",
-            "email": "",
+            "email": "admin@mail.com",
             "date_joined": "2013-04-27T17:52:38.867Z"
         }
     },
     {
-        "pk": 1, 
-        "model": "core.userprofile", 
+        "pk": 1,
+        "model": "core.userprofile",
         "fields": {
-            "is_temporary": false, 
-            "show_comments": false, 
-            "show_english_ingredients": false, 
+            "is_temporary": false,
+            "show_comments": false,
+            "show_english_ingredients": false,
             "user": 1,
             "gym": 1,
             "is_activated": true

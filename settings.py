@@ -58,11 +58,11 @@ WGER_SETTINGS['EMAIL_FROM'] = 'wger Workout Manager <wger@example.com>'
 # Your twitter handle, if you have one for this instance.
 #WGER_SETTINGS['TWITTER'] = ''
 
-#Fitbit settings
+# Fitbit settings
 REDIRECT_URI = os.getenv('REDIRECT_URI', None)
-CLIENT_ID = os.getenv('CLIENT_ID',None)
+CLIENT_ID = os.getenv('CLIENT_ID', None)
 CLIENT_SECRET = os.getenv('CLIENT_SECRET', None)
-SCOPE = ('weight','activity')   # user information wger will have access to
+SCOPE = ('weight', 'activity')   # user information wger will have access to
 Authorization_URI = os.getenv('Authorization_URI', None)
 ACCESS_TOKEN = os.getenv('ACCESS_TOKEN', None)
 
